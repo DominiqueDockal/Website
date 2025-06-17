@@ -64,14 +64,33 @@ footer {
     font-size: var(--font-size-smallest);
 
     a {
-        color: var(--white);
-        text-decoration: none;
-        transition: all 0.3s ease;
+    color: var(--white);
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: -18px; 
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        background-color: var(--main-violet);
+        border-radius: 50%; 
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    &:hover {
+        color: var(--main-violet);
         
-        &:hover {
-            color: var(--main-violet);
-            transform: translateY(-2px);
+        &::before {
+            opacity: 1;
         }
     }
+}
+
 
 }
