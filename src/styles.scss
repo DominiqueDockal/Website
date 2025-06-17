@@ -1,1 +1,42 @@
 
+:root {
+  --main-grey: #1C1C1C;
+  --main-violet: #CF3DB6;
+
+  --violet-light: #E478D4;
+  --violet-lighter: #F0A3E8;
+  --violet-lightest: #F8D1F4;
+  --violet-dark: #B82B9A;
+  --violet-darker: #981F7E;
+  --violet-darkest: #70165C;
+  
+  --violet-deep: #2D1B3D;
+  --gradient-main: linear-gradient(135deg, var(--main-grey), var(--violet-deep));
+
+  --white: white;
+  --font-family-primary: 'Fira_Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --font-size-smallest: 1em;      /* 16px bei 16px Basis */
+  --font-size-small: 1.125em;     /* 18px bei 16px Basis */
+}
+
+@font-face {
+  font-family: 'Fira_Code';
+  src: url('/assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  margin: 0;
+  scroll-behavior: smoth;
+  font-family: var(--font-family-primary);
+}
+
+
+
+
+
+
