@@ -1,16 +1,18 @@
-
 :root {
   --main-grey: #1C1C1C;
   --main-violet: #CF3DB6;
   
   --violet-deep: #2D1B3D;
-  --gradient-main: linear-gradient(135deg, var(--main-grey), var(--violet-deep));
+  --gradient-main: linear-gradient(135deg, var(--main-grey), var(--main-violet));
 
   --white: white;
   --font-family-primary: 'Fira_Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   --font-size-smallest: 1em;      /* 16px bei 16px Basis */
   --font-size-small: 1.125em;     /* 18px bei 16px Basis */
+
+   --transition: 0.1s;
+   --padding-main-lr: 2rem;
 }
 
 @font-face {
@@ -27,6 +29,8 @@ body {
   scroll-behavior: smoth;
   font-family: var(--font-family-primary);
 }
+
+
 
 
 

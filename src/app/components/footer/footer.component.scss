@@ -19,7 +19,37 @@ footer {
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--padding-main-lr);
+
+    a {
+        display: inline-block;
+        cursor: pointer;
+        transition: transform var(--transition) ease;
+
+        svg {
+            width: 100px;
+            height: auto;
+            display: block;
+
+            &:hover {
+                text:nth-child(1), 
+                text:nth-child(4) {
+                    fill: var(--white);
+                }
+                
+                text:nth-child(2), 
+                text:nth-child(3), 
+                text:nth-child(5) {
+                    fill: var(--main-violet);
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: var(--font-size-small);
+        color: var(--main-violet);
+    }
 
     @media (max-width: 700px) {
         display: grid;
@@ -27,7 +57,7 @@ footer {
         gap: 1rem;
         justify-content: space-between;
         
-        svg {
+        a {
             grid-column: 1;
             grid-row: 1;
         }
@@ -44,17 +74,6 @@ footer {
             margin-block-start: 0;
         }   
     }
-
-    svg {
-        width: 100px;
-        height: auto;
-        display: inline-block;
-    }
-
-    p {
-        font-size: var(--font-size-small);
-        color: var(--main-violet);
-    }
 }
 
 .footer-links {
@@ -64,32 +83,32 @@ footer {
     font-size: var(--font-size-smallest);
 
     a {
-    color: var(--white);
-    text-decoration: none;
-    position: relative;
-    transition: all 0.3s ease;
+        color: var(--white);
+        text-decoration: none;
+        position: relative;
+        transition: all var(--transition) ease;
     
-    &::before {
-        content: '';
-        position: absolute;
-        left: -18px; 
-        top: 50%;
-        transform: translateY(-50%);
-        width: 8px;
-        height: 8px;
-        background-color: var(--main-violet);
-        border-radius: 50%; 
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    
-    &:hover {
-        color: var(--main-violet);
-        
         &::before {
-            opacity: 1;
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--main-violet);
+            border-radius: 50%;
+            opacity: 0;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity var(--transition) ease, transform var(--transition) ease;
         }
-    }
+        
+        &:hover {
+            color: var(--main-violet);
+            
+            &::before {
+                opacity: 1;
+            }
+        }
 }
 
 
