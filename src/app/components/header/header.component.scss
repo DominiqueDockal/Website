@@ -33,39 +33,6 @@ header {
     }
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    a {
-        color: var(--white);
-        text-decoration: none;
-        position: relative;
-        transition: all var(--transition) ease;
-    
-        &::before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: var(--main-violet);
-            border-radius: 50%;
-            opacity: 0;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: opacity var(--transition) ease, transform var(--transition) ease;
-        }
-        
-        &:hover {
-            color: var(--main-violet);
-            &::before {
-                opacity: 1;
-            }
-        }
-    }
-}
-
 .button-switch {
     display: flex;
     border: 2px solid var(--main-violet);
@@ -118,6 +85,61 @@ header {
         transition: all var(--transition) ease;
     }
 }
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.sidebar {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 240px;
+    height: 250px;
+    z-index: 1000;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    background: var(--gradient-main);
+    border: 2px solid var(--main-violet);
+}
+
+.navbar a,
+.sidebar a {
+    color: var(--white);
+    text-decoration: none;
+    position: relative;
+    transition: all var(--transition) ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: var(--main-violet);
+        border-radius: 50%;
+        opacity: 0;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity var(--transition) ease, transform var(--transition) ease;
+    }
+    
+    &:hover {
+        color: var(--main-violet);
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+
 
 
 
