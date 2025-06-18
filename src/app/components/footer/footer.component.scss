@@ -20,32 +20,6 @@ footer {
     justify-content: space-between;
     margin: 0 auto;
     padding: 0 var(--padding-main-lr);
-
-    a {
-        display: inline-block;
-        cursor: pointer;
-        transition: transform var(--transition) ease;
-
-        svg {
-            width: 100px;
-            height: auto;
-            display: block;
-
-            &:hover {
-                text:nth-child(1), 
-                text:nth-child(4) {
-                    fill: var(--white);
-                }
-                
-                text:nth-child(2), 
-                text:nth-child(3), 
-                text:nth-child(5) {
-                    fill: var(--main-violet);
-                }
-            }
-        }
-    }
-
     p {
         font-size: var(--font-size-small);
         color: var(--main-violet);
@@ -59,7 +33,7 @@ footer {
         justify-content: space-between;
         padding: 0.8rem var(--padding-main-lr);
         
-        a {
+        .logo {
             grid-column: 1;
             grid-row: 1;
         }

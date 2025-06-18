@@ -31,6 +31,27 @@ body {
   font-family: var(--font-family-primary);
 }
 
+.logo {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform var(--transition) ease;
+    svg {
+        width: 100px;
+        height: auto;
+        display: block;
+        &:hover {
+            text:nth-child(1), 
+            text:nth-child(4) {
+                fill: var(--white);
+            }
+            text:nth-child(2), 
+            text:nth-child(3), 
+            text:nth-child(5) {
+                fill: var(--main-violet);
+            }
+        }
+    }
+}
 
 
 
