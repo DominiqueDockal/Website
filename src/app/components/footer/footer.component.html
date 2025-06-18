@@ -1,10 +1,10 @@
 <footer>
     <div class="main-footer">
 
-    <a [routerLink]="getHomeRoute()" [title]="translate('footer.startpage')">
+    <a [routerLink]="getHomeRoute()" [title]="translate('main.startpage')">
     <svg xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 215 170"
-        width="215" 
+        viewBox="0 0 205 170"
+        width="25" 
         height="170">
         <text fill="var(--main-violet)"
             font-family="Constantia, serif" 
@@ -49,22 +49,13 @@
     </svg>
     </a>
 
-    <p>{{ translate('footer.copyright') }}</p>
+    <p>© Dominique Dockal 2025</p>
 
     <div class="footer-links">
-        <a href="#" [title]="translate('footer.github')">
-            {{ translate('footer.github') }}
-        </a>
-        <a href="#" [title]="translate('footer.linkedin')">
-            {{ translate('footer.linkedin') }}
-        </a>
-        <a href="#" [title]="translate('footer.email')">
-            {{ translate('footer.email') }}
-        </a>
-        <a [routerLink]="getLegalNoticeRoute()" [title]="translate('footer.legalNotice')">
-            {{ translate('footer.legalNotice') }}
-        </a>
-
+        <a href="#" title="GitHub">GitHub</a>
+        <a href="#" title="LinkedIn">LinkedIn</a>
+        <a href="#" [title]="translate('footer.email')">{{ translate('footer.email') }}</a>
+        <a [routerLink]="getLegalNoticeRoute()" [title]="translate('footer.legalNotice')">{{ translate('footer.legalNotice') }}</a>
     </div>
 
     </div>

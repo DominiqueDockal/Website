@@ -1,15 +1,16 @@
 :root {
   --main-grey: #1C1C1C;
   --main-violet: #CF3DB6;
-  
-  --violet-deep: #2D1B3D;
-  --gradient-main: linear-gradient(135deg, var(--main-grey), var(--main-violet));
-
+  --main-violet-dark: #5A1E4A;
+  --gradient-main: linear-gradient(50deg, var(--main-grey) 36.26%, var(--main-violet-dark) 93.28%);
+  --gradient-header:linear-gradient(162deg, var(--main-grey) 36.26%, var(--main-violet-dark) 93.28%);
   --white: white;
-  --font-family-primary: 'Fira_Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  --font-size-smallest: 1em;      /* 16px bei 16px Basis */
-  --font-size-small: 1.125em;     /* 18px bei 16px Basis */
+  --font-family-primary: 'Fira_Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-smallest: 1em;      /* 16px */
+  --font-size-small: 1.125em;     /* 18px */
+  --font-size-medium: 1.25em;     /* 20px */
+
 
    --transition: 0.1s;
    --padding-main-lr: 2rem;
