@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +9,20 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  
+  private languageService = inject(LanguageService);
+
+  translate(key: string): string {
+    return this.languageService.getTranslation(key);
+  }
+
+  getLegalNoticeRoute(): string {
+    return this.languageService.getLegalNoticeRoute();
+  }
+
+  getHomeRoute(): string {
+    return this.languageService.getHomeRoute();
+  }
 
 }
+

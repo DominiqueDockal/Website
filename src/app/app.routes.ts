@@ -4,18 +4,24 @@ import { LegalNoticeComponent } from './components/legal-notice/legal-notice.com
 
 
 export const routes: Routes = [
-  {
+    {
     path: '',
     component: MainContentComponent,
-    title: 'Startpage'
+    title: 'Startseite'
   },
   {
-    path: 'legalNotice',
+    path: 'impressum',
     component: LegalNoticeComponent,
-    title: 'LegalNotice'
+    title: 'Impressum'
+  },
+  {
+    path: 'legal-notice',
+    component: LegalNoticeComponent,
+    title: 'Legal Notice'
   },
   {
     path: '**',
     redirectTo: ''
   }
+
 ];

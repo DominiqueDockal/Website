@@ -1,7 +1,7 @@
 <footer>
     <div class="main-footer">
 
-    <a routerLink="/" title="Startpage">
+    <a [routerLink]="getHomeRoute()" [title]="translate('footer.startpage')">
     <svg xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 215 170"
         width="215" 
@@ -49,13 +49,22 @@
     </svg>
     </a>
 
-    <p>&copy; Dominique Dockal 2025</p>
+    <p>{{ translate('footer.copyright') }}</p>
 
     <div class="footer-links">
-        <a href="#" title="GitHub">GitHub</a>
-        <a href="#" title="LinkedIn">LinkedIn</a>
-        <a href="#" title="Email">Email</a>
-        <a routerLink="legalNotice"  title="Legal Notice">Legal Notice</a>
+        <a href="#" [title]="translate('footer.github')">
+            {{ translate('footer.github') }}
+        </a>
+        <a href="#" [title]="translate('footer.linkedin')">
+            {{ translate('footer.linkedin') }}
+        </a>
+        <a href="#" [title]="translate('footer.email')">
+            {{ translate('footer.email') }}
+        </a>
+        <a [routerLink]="getLegalNoticeRoute()" [title]="translate('footer.legalNotice')">
+            {{ translate('footer.legalNotice') }}
+        </a>
+
     </div>
 
     </div>
