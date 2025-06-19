@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy,  HostListener  } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private languageService = inject(LanguageService);
   private subscription?: Subscription;
   currentLanguage: string = 'de';
+  isSidebarOpen = false;
 
   ngOnInit() {
     this.currentLanguage = this.languageService.getCurrentLanguage();
@@ -43,8 +44,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   toggleBurgerMenu() {
-      
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
+
+  closeSidebar() {
+    this.isSidebarOpen = false;
+  }
+
+  onSidebarClick(event: Event) {
+    event.stopPropagation(); 
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    const target = event.target as HTMLElement;
+    const sidebar = document.querySelector('.sidebar');
+    const burgerMenu = document.querySelector('.burger-menu');
+    if (this.isSidebarOpen && sidebar && !sidebar.contains(target) && burgerMenu && !burgerMenu.contains(target)) this.closeSidebar();
+  }
+  
 
 
 

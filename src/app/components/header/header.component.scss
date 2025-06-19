@@ -40,7 +40,6 @@ header {
     position: relative;
     overflow: hidden;
     width: fit-content;
-    
     button {
         background-color: transparent; 
         color: var(--main-violet); 
@@ -54,7 +53,7 @@ header {
         align-items: center;
         justify-content: center;
         text-align: center;
-        
+
         &:focus {
             outline: none;
         }
@@ -65,7 +64,6 @@ header {
             font-weight: bold;
             border-radius: 20px;
             width: 50px;
-
         }
     }
 }
@@ -85,7 +83,6 @@ header {
         transition: all var(--transition) ease;
     }
 }
-
 
 .navbar {
     display: flex;
@@ -108,6 +105,7 @@ header {
     gap: 1.5em;
     background: var(--gradient-main);
     border: 2px solid var(--main-violet);
+    transition: right var(--transition) ease;
 }
 
 .navbar a,
@@ -137,6 +135,24 @@ header {
             opacity: 1;
         }
     }
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--overlay);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition) ease, visibility var(--transition) ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 

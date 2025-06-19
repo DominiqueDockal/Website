@@ -116,7 +116,8 @@
     </div>
 </header>
 
- <div class="sidebar">
+<div class="sidebar-overlay" [class.active]="isSidebarOpen" (click)="closeSidebar()">
+<div class="sidebar" [class.active]="isSidebarOpen" (click)="onSidebarClick($event)">
     <a href="#" [title]="translate('nav.about')">{{ translate('nav.about') }}</a>
     <a href="#" [title]="translate('nav.expertise')">{{ translate('nav.expertise') }}</a>
     <a href="#" [title]="translate('nav.projects')">{{ translate('nav.projects') }}</a>
@@ -124,8 +125,9 @@
         <button (click)="switchToGerman()" [class.active]="currentLanguage === 'de'">DE</button>
         <button (click)="switchToEnglish()" [class.active]="currentLanguage === 'en'">EN</button>
     </div>
-
 </div>
+</div>
+
 
 
 
