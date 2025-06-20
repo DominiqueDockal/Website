@@ -22,7 +22,7 @@ export class LanguageService {
 
   private static readonly ROUTE_CONFIG: Record<RouteType, Record<Language, string>> = {
     legal: { en: '/legal-notice', de: '/impressum' },
-    privacy: { en: '/privacy', de: '/datenschutz' },
+    privacy: { en: '/privacy-policy', de: '/datenschutz' },
     home: { en: '/en', de: '/' }
   };
 
@@ -31,7 +31,7 @@ export class LanguageService {
     '/en': 'home', 
     '/legal-notice': 'legal',
     '/impressum': 'legal',
-    '/privacy': 'privacy',
+    '/privacy-policy': 'privacy',
     '/datenschutz': 'privacy'
   };
 
@@ -51,7 +51,7 @@ export class LanguageService {
 }
 
   getPrivacyRoute(): string {
-    return this.currentLanguage.value === 'en' ? '/privacy' : '/datenschutz';
+    return this.currentLanguage.value === 'en' ? '/privacy-policy' : '/datenschutz';
   }
 
   getHomeRoute(): string {
@@ -168,7 +168,7 @@ export class LanguageService {
   }
 
   private extractLanguageFromUrl(url: string): Language | null {
-    const englishRoutes = ['/legal-notice', '/privacy', '/en'];
+    const englishRoutes = ['/legal-notice', '/privacy-policy', '/en'];
     const germanRoutes = ['/impressum', '/datenschutz', '/'];
     const cleanUrl = url.split('?')[0].split('#')[0];
     if (englishRoutes.some(route => cleanUrl === route || cleanUrl.startsWith(route))) return 'en';
@@ -178,14 +178,5 @@ export class LanguageService {
 }
 
 
-
-/* routeCache = Map {
-  'en-legal' → '/legal-notice',
-  'de-legal' → '/impressum', 
-  'en-privacy' → '/privacy',
-  'de-privacy' → '/datenschutz',
-  'en-home' → '/en',
-  'de-home' → '/'
-} */
 
 
