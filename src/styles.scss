@@ -4,7 +4,7 @@
   --main-violet-dark: #5A1E4A;
   --gradient-main: linear-gradient(50deg, var(--main-grey) 36.26%, var(--main-violet-dark) 93.28%);
   --gradient-header:linear-gradient(162deg, var(--main-grey) 36.26%, var(--main-violet-dark) 93.28%);
-  --box-background:linear-gradient(50deg, var(--main-violet-dark) 36.26%, var(--main-grey) 93.28%);
+  --box-background:#342030;
   --white: white;
   --overlay: rgba(0, 0, 0, 0.5);
   --font-family-primary: 'Fira_Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -15,11 +15,10 @@
   --font-size-largest: 4em;       /* 64px */
    --transition: 0.1s;
    --padding-main-lr: 2rem;
-   --main-margin-title: 1rem;
-   --main-box-padding: 1rem;
+   --padding-section-top: 100px;
    --main-box-radius: 30px;
-   --main-padding-top: 100px;
-   --text-box-inner-padding: 1rem;
+   --text-box-inner-padding: 2rem;
+    --margin-box-title: 1rem;
 }
 
 @font-face {
