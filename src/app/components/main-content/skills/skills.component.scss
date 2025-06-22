@@ -8,6 +8,7 @@
 .skills-main{
     max-width: 1440px;
     height: 100%;
+    margin: 0 auto;
     padding: 0 var(--padding-main-lr); 
     display: grid;
     grid-template-columns: 2fr 3fr; 
@@ -67,6 +68,12 @@
     font-weight: bold;
     color: var(--white);
     padding-top: 1.5rem;
+
+    @media (max-width: 900px) {
+        font-size: var(--font-size-medium);
+    }
+
+
 }
 
 .highlight {

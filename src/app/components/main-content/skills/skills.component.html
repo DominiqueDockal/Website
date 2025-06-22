@@ -2,21 +2,21 @@
     <div class="skills-main">
 
         <div class="text-section">
-            <p class="box-title">Technologies</p>
+            <p class="box-title">{{translate('skills.box-title')}}</p>
 
             <div class="text-box">
-                <p class="box-headline">Skill Set</p>
-                <p class="main-text">Skill Set
-                    A short introduction of your skills. Highlight your experience 
-                    of  using different front-end technologies and emphasise your openness to learning and adapting to new technologies. 
-                    Show how important it is for you to keep up with the rapid changes in web development.
-                </p> 
-                <p class="another-skill">You need <span class="highlight">another skill?</span></p>
-                <p class="sub-text">Feel free to contact me. I look forward to expanding on my previous knowledge.</p> 
-                <p class="button"  (click)="onButtonClick($event)"><span>Lets talk</span></p>
+                <p class="box-headline">{{translate('skills.box-headline')}}</p>
+                <p class="main-text">{{translate('skills.main-text')}}</p> 
+                <p class="another-skill">{{translate('skills.another-skill')}} <span class="highlight">{{translate('skills.highlight')}}</span></p>
+                <p class="sub-text">{{translate('skills.sub-text')}}</p> 
+                <p class="button"  [title]="translate('skills.button')"><span>{{translate('skills.button')}}</span></p>
             </div>
         </div>
 
+        <div class="skill-section">
+
+            
+        </div>
 
 
     </div>

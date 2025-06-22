@@ -13,14 +13,24 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'about.main-text': 'Hey, ich bin Dominique. Mein Bachelor in Informatik \
                         verleiht meiner praktischen Programmiererfahrung eine solide \
                         theoretische Fundierung. Diese Kombination ermöglicht es mir, \
-                        nachhaltige und durchdachte Lösungen zu finden',
+                        nachhaltige und durchdachte Lösungen zu finden.',
     'about.location': 'Stuttgart oder Remote - flexibel und fokussiert.',
     'about.mindset': 'Ich bin von Natur aus neugierig und lerne neue Technologien schnell. \
-                      Jede Herausforderung sehe ich als Chance, meine Fähigkeiten zu erweitern \
+                      Jede Herausforderung sehe ich als Chance, meine Fähigkeiten zu erweitern. \
                       und innovative Lösungsansätze zu entwerfen.',
     'about.problem-solving': 'Beim Problemlösen gehe ich strukturiert und analytisch vor. \
                               Ich zerlege komplexe Aufgaben systematisch, erkenne Muster und \
                               Zusammenhänge schnell und entwickle Lösungen, die sowohl elegant als auch präzise sind.',
+
+    'skills.box-title': 'Technologien',
+    'skills.box-headline': 'Expertise',
+    'skills.main-text': 'Mir ist das Verständnis der zugrunde liegenden Theorie genau so wichtig, wie ihre praktische Anwendung. \
+                         Durch das systematische Erfassen der Grundpinzipien ist mir das Erlernen neuer Technologien durch Transfer sehr schnell möglich.',
+    'skills.another-skill': 'Suchen Sie nach einer',
+    'skills.highlight': 'anderen Technologie?',
+    'skills.sub-text': 'Kontaktieren Sie mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.',
+    'skills.button': 'Kontakt',
+
 
   },
   en: {
@@ -43,6 +53,15 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'about.problem-solving': 'When solving problems, I take a structured and analytical approach. \
                               I systematically break down complex tasks, quickly recognize patterns \
                               and connections, and develop solutions that are both elegant and precise.',
+
+    'skills.box-title':'Technologies',
+    'skills.box-headline': 'Skill Set',
+    'skills.main-text': 'I place equal importance on understanding the underlying theory as on its practical application. \
+                         By systematically grasping the fundamental principles, I can quickly learn new technologies through effective transfer.',
+    'skills.another-skill': 'You need',
+    'skills.highlight': 'another skill?',
+    'skills.sub-text': 'Feel free to contact me. I look forward to expanding on my previous knowledge.',
+    'skills.button': 'Let\'s Talk',
 
   }
 };

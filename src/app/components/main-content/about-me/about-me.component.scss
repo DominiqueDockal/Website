@@ -8,6 +8,7 @@
 .about-me-main{
     max-width: 1440px;
     height: 100%;
+    margin: 0 auto;
     padding: 0 var(--padding-main-lr); 
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -34,7 +35,7 @@
     object-fit: cover;
     border-radius: var(--main-box-radius);
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       height: auto; 
       width: 100%;
     }
@@ -122,6 +123,8 @@
       height: 24px; 
       margin-right: 1rem; 
       margin-top: 0.2rem;
+      fill: var(--main-violet);
+
     }
 
   }

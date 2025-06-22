@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'app-skills',
@@ -7,15 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  onButtonClick(event: Event): void {
-    const target = event.target as HTMLElement;
-    target.style.animation = 'none';
-    
-    // Hier  Navigation/Weiterleitung
-    // z.B. this.router.navigate(['/contact']);
-    
-    console.log('Button clicked - navigation logic here');
-}
+  private languageService = inject(LanguageService);
+
+  translate(key: string): string {
+    return this.languageService.getTranslation(key);
+  }
+
   
 
 }

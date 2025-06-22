@@ -1,3 +1,24 @@
-main {
-  margin-top: 100px; 
+:host {  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
 }
+
+::ng-deep app-header {
+  height: 100px;
+  flex-shrink: 0; 
+}
+
+::ng-deep main {
+  flex-grow: 1; 
+}
+
+::ng-deep app-footer {
+  height: 150px; 
+  flex-shrink: 0;
+  
+  @media (max-width: 800px) {
+    height: 200px;
+  }
+}
+

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy,  HostListener  } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy,  HostListener } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-header',
   imports: [RouterLink],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 
 export class HeaderComponent implements OnInit, OnDestroy {
@@ -29,6 +29,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   translate(key: string): string {
     return this.languageService.getTranslation(key);
+  }
+
+  toggleLanguage(): void {
+    this.currentLanguage = this.currentLanguage === 'de' ? 'en' : 'de';
+    if (this.currentLanguage === 'de') {
+        this.switchToGerman();
+    } else {
+        this.switchToEnglish();
+    }
   }
 
   switchToGerman() {

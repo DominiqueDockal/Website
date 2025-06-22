@@ -1,8 +1,4 @@
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   height: 100px;
   background: var(--gradient-header);
@@ -31,41 +27,6 @@ header {
     .main-header-mobile {
         display: flex; 
         padding: 0 var(--padding-main-lr-mobile);  
-    }
-}
-
-.button-switch {
-    display: flex;
-    border: 2px solid var(--main-violet);
-    border-radius: 25px; 
-    position: relative;
-    overflow: hidden;
-    width: fit-content;
-    button {
-        background-color: transparent; 
-        color: var(--main-violet); 
-        border: none;
-        padding: 0.5rem 1.2rem;
-        cursor: pointer;
-        transition: all var(--transition) ease;
-        font-weight: 500;
-        width:20px; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-
-        &:focus {
-            outline: none;
-        }
-        
-        &.active {
-            background-color: var(--main-violet);
-            color: var(--white);
-            font-weight: bold;
-            border-radius: 20px;
-            width: 50px;
-        }
     }
 }
 
@@ -158,7 +119,83 @@ header {
   }
 }
 
+.button-switch {
+    display: block;
+    width: 84px;
+    height: 28px;
+    cursor: pointer;
+    
+    .normal-svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .hover-svg {
+        display: none;
+        width: 100%;
+        height: 100%;
+    }
+    
+    &:hover {
+        .normal-svg {
+            display: none;
+        }
+        
+        .hover-svg {
+            display: block;
+        }
+    }
+}
 
+
+
+
+/* 
+.button-switch {
+    display: flex;
+    border: 2px solid var(--main-violet);
+    border-radius: 25px; 
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    transition: border-color var(--transition) ease;
+
+    &:hover {
+        border-color: var(--white); 
+        
+        button:not(.active) {
+            color: var(--main-violet); 
+        }
+    }
+}
+
+button {
+    background-color: transparent; 
+    color: var(--main-violet-reduced);
+    border: none;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: all var(--transition) ease;
+    font-weight: 500;
+    width:20px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &:focus {
+        outline: none;
+    }
+    
+    &.active {
+        background-color: var(--main-violet);
+        color: var(--white);
+        font-weight: bold;
+        border-radius: 20px;
+        width: 50px;
+    }
+} */
 
 
 
