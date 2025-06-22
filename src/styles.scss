@@ -16,6 +16,7 @@
   --font-size-larger: 3.5em;       /* 56px */
   --font-size-largest: 4em;       /* 64px */
    --transition: 0.1s;
+   --animation: 2s;
    --padding-main-lr: 2rem;
    --padding-main-lr-mobile: 1rem;
    --padding-section-top: 100px;
@@ -52,7 +53,7 @@ body {
     transition: transform var(--transition) ease;
     svg {
         width: 100px;
-        height: auto;
+        height: 80px;
         display: block;
         &:hover {
             text:nth-child(1), 
