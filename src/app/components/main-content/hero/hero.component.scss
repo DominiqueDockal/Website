@@ -89,7 +89,7 @@ $break-point-banner: 400px;
 
 .strip {
   position: absolute;
-  bottom: 40%;
+  bottom: 5%; 
   left: 0;
   right: 0;
   width: 100%; 
@@ -103,12 +103,6 @@ $break-point-banner: 400px;
   align-items: center;
   cursor: pointer;
   margin: 0 auto;
-
-  @media (max-width: $break-point-banner) {
-    bottom: -35%; 
-  }
-
-
 }
 
 
