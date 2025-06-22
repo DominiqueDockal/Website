@@ -23,13 +23,14 @@ header {
     display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .main-header {
         display: none;
     }
 
     .main-header-mobile {
         display: flex; 
+        padding: 0 var(--padding-main-lr-mobile);  
     }
 }
 
@@ -88,6 +89,7 @@ header {
     display: flex;
     align-items: center;
     gap: 1em;
+    font-size: var(--font-size-small);
 }
 
 .sidebar {
@@ -106,6 +108,7 @@ header {
     background: var(--gradient-main);
     border: 2px solid var(--main-violet);
     transition: right var(--transition) ease;
+    font-size: var(--font-size-smallest);
 }
 
 .navbar a,

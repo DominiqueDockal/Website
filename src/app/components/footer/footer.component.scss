@@ -7,7 +7,7 @@ footer {
   height: 150px;
   background-color: var(--main-grey);
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     height: 200px;
   }
 }
@@ -25,13 +25,13 @@ footer {
         color: var(--main-violet);
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
         display: grid;
         grid-template-columns: auto auto;
         grid-template-rows: 100px 100px;
         gap: 1rem;
         justify-content: space-between;
-        padding: 0.8rem var(--padding-main-lr);
+        padding: 0.8rem var(--padding-main-lr-mobile);
         .logo {
             grid-column: 1;
             grid-row: 1;
