@@ -8,7 +8,7 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'nav.expertise' : 'Expertise',
     'nav.projects' : 'Projekte',
 
-    'about.box-title' : 'Wer Ich Bin',
+    'about.box-title' : 'Wer Bin Ich',
     'about.box-headline': 'Über mich',
     'about.main-text': 'Hey, ich bin Dominique. Hier kommt bald ein Text',
     'about.location': 'Ich komme aus Stuttgart',
