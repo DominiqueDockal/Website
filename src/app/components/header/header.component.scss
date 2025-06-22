@@ -153,52 +153,5 @@ header {
 
 
 
-/* 
-.button-switch {
-    display: flex;
-    border: 2px solid var(--main-violet);
-    border-radius: 25px; 
-    position: relative;
-    overflow: hidden;
-    width: fit-content;
-    transition: border-color var(--transition) ease;
-
-    &:hover {
-        border-color: var(--white); 
-        
-        button:not(.active) {
-            color: var(--main-violet); 
-        }
-    }
-}
-
-button {
-    background-color: transparent; 
-    color: var(--main-violet-reduced);
-    border: none;
-    padding: 0.5rem 1.2rem;
-    cursor: pointer;
-    transition: all var(--transition) ease;
-    font-weight: 500;
-    width:20px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    &:focus {
-        outline: none;
-    }
-    
-    &.active {
-        background-color: var(--main-violet);
-        color: var(--white);
-        font-weight: bold;
-        border-radius: 20px;
-        width: 50px;
-    }
-} */
-
-
 
 

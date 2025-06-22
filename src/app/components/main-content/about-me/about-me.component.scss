@@ -70,7 +70,7 @@ $break-point-font: 950px;
     margin-block-end: 0;
 
     @media (max-width: $break-point-font) {
-        font-size: var(--font-size-larger);
+        font-size: var(--font-size-title);
     }
 }
 
