@@ -1,3 +1,6 @@
+$break-point-layout: 900px;
+$break-point-font: 950px;
+
 .about-me {
   width: 100%;
   min-height: 600px; /* anpassen an text später*/
@@ -14,7 +17,7 @@
     grid-template-columns: 1fr 1fr; 
     gap: 2rem; 
 
-    @media (max-width: 800px) {
+    @media (max-width: $break-point-layout) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +38,7 @@
     object-fit: cover;
     border-radius: var(--main-box-radius);
 
-    @media (max-width: 900px) {
+    @media (max-width: $break-point-layout) {
       height: auto; 
       width: 100%;
     }
@@ -54,7 +57,7 @@
     color: var(--main-violet);
     font-family: var(--font-family-secondary);
 
-    @media (max-width: 900px) {
+    @media (max-width:$break-point-font) {
         font-size: var(--font-size-small);
     }
 }
@@ -66,7 +69,7 @@
     margin-block-start: 0;
     margin-block-end: 0;
 
-    @media (max-width: 900px) {
+    @media (max-width: $break-point-font) {
         font-size: var(--font-size-larger);
     }
 }
@@ -77,7 +80,7 @@
     text-align: justify;
     font-family: var(--font-family-secondary);
 
-    @media (max-width: 900px) {
+    @media (max-width: $break-point-font) {
         font-size: var(--font-size-smallest);
     }
 }
@@ -112,7 +115,7 @@
       font-size: var(--font-size-small);
       font-weight: 300;
 
-      @media (max-width: 900px) {
+      @media (max-width: $break-point-font) {
         font-size: var(--font-size-smallest);
       }
     }
