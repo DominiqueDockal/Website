@@ -31,6 +31,10 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'skills.sub-text': 'Kontaktieren Sie mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.',
     'skills.button': 'Kontakt',
 
+    'hero.contact': 'Kontakt',
+    'hero.my-work': 'Meine Projekte',
+    'hero.banner': 'Einfachheit • ist • die • höchste • Form • der • Raffinesse',
+
 
   },
   en: {
@@ -62,6 +66,10 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'skills.highlight': 'another skill?',
     'skills.sub-text': 'Feel free to contact me. I look forward to expanding on my previous knowledge.',
     'skills.button': 'Let\'s Talk',
+
+    'hero.contact': 'Contact me',
+    'hero.my-work': 'Check my work',
+    'hero.banner': 'Simplicity • is • the • ultimate • sophistication',
 
   }
 };

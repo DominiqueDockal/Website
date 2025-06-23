@@ -1,9 +1,8 @@
 $break-point-layout: 900px;
+$break-point-layout-two: 374px;
 $break-point-font: 950px;
 $break-point-font-two: 450px;
 $break-point-font-three: 400px;
-$break-point-layout-two: 374px;
-$break-point-banner: 400px;
 
 .hero{
   width: 100%;
@@ -84,7 +83,6 @@ $break-point-banner: 400px;
     @media (max-width: $break-point-font) {
         font-size: var(--font-size-large);
         }
-
 }
 
 .strip {
@@ -104,7 +102,6 @@ $break-point-banner: 400px;
   cursor: pointer;
   margin: 0 auto;
 }
-
 
 .strip-text {
   white-space: nowrap;
