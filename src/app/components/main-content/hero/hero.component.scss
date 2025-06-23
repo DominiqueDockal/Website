@@ -10,13 +10,14 @@ $break-point-font-three: 400px;
   background: var(--gradient-main);
   display: flex;
   align-items: center; 
+  justify-content: center;
   position: relative; 
 }
 
 .hero-main{
     max-width: 1440px;
     height: 100%;
-    margin: 0 auto;
+    width: 100%;
     padding: 0 var(--padding-main-lr); 
     display: flex;
     justify-content: center;
@@ -27,6 +28,36 @@ $break-point-font-three: 400px;
     @media (max-width: $break-point-layout) {
         padding: 0 var(--padding-main-lr-mobile);
     } 
+}
+
+.lines-container {
+    position:absolute;
+    bottom: 0; 
+    max-width: 1440px;
+    width: 100%; 
+    height: 0x;
+    left: 0;
+    right: 0;
+    margin: 0 auto;  
+}
+
+.strip {
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  width: 100%; 
+  max-width: 1440px;
+  height: 40px; 
+  background: var(--strip-background); 
+  transform-origin: bottom left;
+  transform: rotate(-4deg); 
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 auto;
 }
 
 .button-section{
@@ -41,7 +72,6 @@ $break-point-font-three: 400px;
         flex-direction: column;
         }        
 }
-
 
 .name{
     font-size: var(--font-size-name);
@@ -80,24 +110,6 @@ $break-point-font-three: 400px;
         }
 }
 
-.strip {
-  position: absolute;
-  bottom: 0; 
-  left: 0;
-  right: 0;
-  width: 100%; 
-  max-width: 1440px;
-  height: 40px; 
-  background: var(--box-background);
-  transform-origin: bottom left;
-  transform: rotate(-4deg); 
-  overflow: hidden; 
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin: 0 auto;
-}
-
 .strip-text {
   white-space: nowrap;
   animation: scrollText 15s linear infinite;
@@ -119,14 +131,6 @@ $break-point-font-three: 400px;
     }
 }
 
-.lines-container {
-    position: absolute;
-    bottom: 0; 
-    max-width: 1440px;
-    width: 100%;
-    height: 100%;
-}
-
 .vertical-line-left {
     position: absolute;
     left: var(--stripe-lr);
@@ -140,6 +144,18 @@ $break-point-font-three: 400px;
     } 
 }
 
+.line-end-arrow {
+    position: absolute;
+    left: var(--stripe-lr);
+    top: -260px;
+    transform: translateX(-50%); 
+
+    @media (max-width: $break-point-layout) {
+        left: var(--stripe-lr-mobile);
+    }
+}
+
+
 .vertical-line-right {
     position: absolute;
     right: var(--stripe-lr);
@@ -152,6 +168,22 @@ $break-point-font-three: 400px;
         right: var(--stripe-lr-mobile);
     } 
 }
+
+.line-end-arrow path {
+    animation: arrowBounce var(--animation) ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateY(0px); 
+    }
+    50% {
+        transform: translateY(8px); 
+    }
+}
+
+
 
 
 
