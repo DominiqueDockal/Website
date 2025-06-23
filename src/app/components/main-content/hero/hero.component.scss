@@ -9,7 +9,7 @@ $break-point-font-three: 400px;
   min-height: 800px; /* anpassen an text später*/
   background: var(--gradient-main);
   display: flex;
-  align-items: center;
+  align-items: center; 
   position: relative; 
 }
 
@@ -20,19 +20,14 @@ $break-point-font-three: 400px;
     padding: 0 var(--padding-main-lr); 
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    color: var(--white);
+    align-items:center;
 
     @media (max-width: $break-point-layout) {
         padding: 0 var(--padding-main-lr-mobile);
     } 
 }
-
-.info {
-    display:flex;
-    flex-direction: column;
-    color: var(--white);
-    align-items:center;
-}
-
 
 .button-section{
     display:flex;
@@ -87,7 +82,7 @@ $break-point-font-three: 400px;
 
 .strip {
   position: absolute;
-  bottom: 5%; 
+  bottom: 0; 
   left: 0;
   right: 0;
   width: 100%; 
@@ -95,7 +90,7 @@ $break-point-font-three: 400px;
   height: 40px; 
   background: var(--box-background);
   transform-origin: bottom left;
-  transform: rotate(-5deg); 
+  transform: rotate(-4deg); 
   overflow: hidden; 
   display: flex;
   align-items: center;
@@ -123,6 +118,42 @@ $break-point-font-three: 400px;
         transform: translateX(-100%); 
     }
 }
+
+.lines-container {
+    position: absolute;
+    bottom: 0; 
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+}
+
+.vertical-line-left {
+    position: absolute;
+    left: var(--stripe-lr);
+    bottom: 0;
+    width: 1px;
+    height: 200px;
+    background: var(--main-violet);
+
+    @media (max-width: $break-point-layout) {
+        left: var(--stripe-lr-mobile);
+    } 
+}
+
+.vertical-line-right {
+    position: absolute;
+    right: var(--stripe-lr);
+    bottom: 0;
+    width: 1px;
+    height: 150px;
+    background: var(--white);
+
+    @media (max-width: $break-point-layout) {
+        right: var(--stripe-lr-mobile);
+    } 
+}
+
+
 
 
 
