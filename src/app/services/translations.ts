@@ -1,8 +1,9 @@
 export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
   de: {
-    'footer.email': 'E-Mail',
-    'footer.legalNotice': 'Impressum',
+    'main.email': 'E-Mail',
     'main.startpage': 'Startseite',
+
+    'footer.legalNotice': 'Impressum',
 
     'nav.about': 'Über mich',
     'nav.expertise' : 'Expertise',
@@ -38,9 +39,10 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
 
   },
   en: {
-    'footer.email': 'Email',
-    'footer.legalNotice': 'Legal Notice',
+    'main.email': 'Email',
     'main.startpage': 'Startpage',
+
+    'footer.legalNotice': 'Legal Notice',
 
     'nav.about': 'About me',
     'nav.expertise' : 'Skills',
