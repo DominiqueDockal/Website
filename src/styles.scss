@@ -132,6 +132,34 @@ body {
     }
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--main-grey);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-violet-dark);
+  border-radius: 6px;
+  border: 2px solid var(--main-grey);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-violet);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--main-grey);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-violet-dark) var(--main-grey);
+}
+
 
 
 
