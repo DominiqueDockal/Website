@@ -11,12 +11,12 @@ export const PROJECTS_DATA: Project[] = [
     id: 'da-bubble',
     name: 'Da Bubble',
     technologies: ['Angular', 'Firebase', 'TypeScript'],
-    image: 'assets/images/PolloLoco.png'
+    image: 'assets/images/DaBubble.png'
   },
   {
     id: 'backend',
     name: 'Backend',
-    technologies: ['XXX', 'XXX', 'XXX'],
-    image: 'assets/images/PolloLoco.png'
+    technologies: ['XXX', 'abc', 'ABC'],
+    image: 'assets/images/BackendDevSecOps.png'
   }
 ];
