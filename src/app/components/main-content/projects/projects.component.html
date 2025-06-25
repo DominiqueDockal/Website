@@ -1,56 +1,51 @@
 <div class="projects">
     <div class="projects-main">
-        <p class="box-title">Porfolio</p>
-        <p class="box-headline">Featured Projects</p>
-        <p class="main-text">Explore a selection of my work here - Interact with <br> 
-                            projects to see my skills in action</p> 
+        <p class="box-title">Portfolio</p>
+        <p class="box-headline">{{translate('projects.box-headline')}}</p>
+        <p class="main-text">{{translate('projects.main-text')}}</p> 
         
-
+       <div class="content-layout">
         <div class="project-table">
+            @for (project of projects; track project.id) {
+                <div class="project-row" [attr.data-project]="project.id">
+                    <div class="project-separator"></div>
+                    <div class="project-content"
+                        (mouseenter)="onProjectHover(project.id)"
+                        (mouseleave)="onProjectLeave()">
+                        <div class="project-left">
+                            <span class="project-name">{{project.name}}</span>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_6063_2678" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="23">
+                                <rect width="23" height="23" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_6063_2678)">
+                                <path d="M15.5675 8.39893L6.68683 17.2798C6.48047 17.486 6.25023 17.5842 5.99611 17.5743C5.742 17.5643 5.51184 17.4563 5.30564 17.2501C5.09927 17.0437 4.99609 16.8085 4.99609 16.5445C4.99609 16.2805 5.09927 16.0453 5.30564 15.8389L14.1566 6.98802H6.78674C6.50802 6.98802 6.27267 6.89251 6.08069 6.70148C5.88854 6.51029 5.79247 6.27606 5.79247 5.99878C5.79247 5.72151 5.88854 5.4856 6.08069 5.29105C6.27267 5.09667 6.50802 4.99948 6.78674 4.99948H16.5617C16.8405 4.99948 17.0759 5.09547 17.268 5.28746C17.46 5.47961 17.556 5.71504 17.556 5.99375V15.7688C17.556 16.0475 17.4605 16.2829 17.2695 16.475C17.0783 16.667 16.844 16.763 16.5668 16.763C16.2895 16.763 16.0537 16.667 15.8593 16.475C15.6647 16.2829 15.5675 16.0475 15.5675 15.7688V8.39893Z" fill="white"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="project-technologies">
+                            @for (tech of project.technologies; track tech) {
+                                <span>{{tech}}</span>
+                            }
+                        </span>
+                    </div>
+                </div>
+            }
             <div class="project-row">
                 <div class="project-separator"></div>
-                <div class="project-content">
-                <span class="project-name">El Pollo Loco</span>
-                <span class="project-technologies">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                </span>
-                </div>
             </div>
-            
-            <div class="project-row">
-                <div class="project-separator"></div>
-                <div class="project-content">
-                <span class="project-name">Da Bubble</span>
-                <span class="project-technologies">
-                    <span>Angular</span>
-                    <span>Firebase</span>
-                    <span>TypeScript</span>
-                </span>
-                </div>
-            </div>
+        </div>
 
-            <div class="project-row">
-                <div class="project-separator"></div>
-                <div class="project-content">
-                <span class="project-name">weitere Projekte</span>
-                <span class="project-technologies">
-                    <span>XXX</span>
-                    <span>XXX</span>
-                    <span>XXX</span>
-                </span>
-                </div>
-            </div>
-            
-            
-            <div class="project-row">
-                <div class="project-separator"></div>
-            </div>
-            </div>
+        <div class="pictures">
+            @for (project of projects; track project.id) {
+                <img [src]="project.image" 
+                    [title]="project.name" 
+                    [attr.data-project]="project.id"
+                    class="project-image">
+            }
+        </div>
+    </div>
 
     </div> 
-
-
 </div>
 

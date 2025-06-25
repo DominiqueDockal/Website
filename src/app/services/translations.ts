@@ -36,6 +36,10 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'hero.my-work': 'Meine Projekte',
     'hero.banner': 'Einfachheit • ist • die • höchste • Form • der • Raffinesse',
 
+    'projects.box-headline': 'Projekte',
+    'projects.main-text': 'Hier ist eine Auswahl meiner Arbeit - schau sie dir live an und teste selbst.',
+
+
 
   },
   en: {
@@ -72,6 +76,9 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'hero.contact': 'Contact me',
     'hero.my-work': 'Check my work',
     'hero.banner': 'Simplicity • is • the • ultimate • sophistication',
+
+    'projects.box-headline': 'Featured Projects',
+    'projects.main-text': 'Explore a selection of my work here - Interact with projects to see my skills in action.',
 
   }
 };
