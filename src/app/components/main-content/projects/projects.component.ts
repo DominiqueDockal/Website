@@ -1,7 +1,8 @@
-import { Component, inject, OnInit, HostListener} from '@angular/core';
+import { Component, inject, OnInit, HostListener, AfterViewInit} from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { ProjectsService } from '../../../services/projects.service';
 import { Project } from '../../../models/project.interface';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 
 @Component({
@@ -10,13 +11,19 @@ import { Project } from '../../../models/project.interface';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent implements OnInit{
+export class ProjectsComponent implements OnInit, AfterViewInit {
   private languageService = inject(LanguageService);
   private projectsService = inject(ProjectsService);
+  private sanitizer = inject(DomSanitizer);
+  
   projects: Project[] = [];
+  currentProject: Project | null = null; 
 
   ngOnInit(): void {
     this.projects = this.projectsService.getProjects();
+  }
+
+  ngAfterViewInit(): void {
     this.setImagePositions();
   }
 
@@ -34,6 +41,28 @@ export class ProjectsComponent implements OnInit{
     this.hideAllImages();
   }
 
+  onProjectClick(projectId: string): void {
+    this.currentProject = this.projects.find(p => p.id === projectId) || null;
+    this.showOverlay();
+  }
+
+  onCloseOverlay(): void {
+    this.hideOverlay();
+  }
+
+  onOverlayBackgroundClick(): void {
+    this.hideOverlay();
+  }
+
+  onOverlayContentClick(event: Event): void {
+    event.stopPropagation();
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+     this.setImagePositions();
+  }
+
   private hideAllImages(): void {
     const images = document.querySelectorAll('.project-image');
     images.forEach(img => {
@@ -41,56 +70,52 @@ export class ProjectsComponent implements OnInit{
     });
   }
 
-/* private setImagePositions(): void {
-  setTimeout(() => {
-    const projectContents = document.querySelectorAll('.project-content');
-    const images = document.querySelectorAll('.project-image');
-    let cumulativeTop = 0;
-    
-    projectContents.forEach((content, index) => {
-      const correspondingImage = images[index] as HTMLElement;
-      if (correspondingImage && content) {
-        correspondingImage.style.top = `${cumulativeTop}px`;
-        const contentHeight = (content as HTMLElement).offsetHeight;
-        cumulativeTop += contentHeight;
-      }
-    });
-  }, 200);
-} */
+  private setImagePositions(): void {
+    setTimeout(() => {
+      const projectRows = document.querySelectorAll('.project-row'); 
+      const images = document.querySelectorAll('.project-image');
+      let cumulativeTop = 0;
+      projectRows.forEach((row, index) => {
+        const correspondingImage = images[index] as HTMLElement;
+        if (correspondingImage && row) {
+          const rowElement = row as HTMLElement;
+          const rowHeight = rowElement.offsetHeight;
+          correspondingImage.style.top = `${cumulativeTop}px`;
+          cumulativeTop += rowHeight;
+        }
+      });
+    }, 300); 
+  }
 
-private setImagePositions(): void {
-  setTimeout(() => {
-    const projectRows = document.querySelectorAll('.project-row'); // Ganze Zeile statt nur Content
-    const images = document.querySelectorAll('.project-image');
-    let cumulativeTop = 0;
-    
-    console.log('=== Bildpositionierung ===');
-    console.log('Bildschirmbreite:', window.innerWidth);
-    
-    projectRows.forEach((row, index) => {
-      const correspondingImage = images[index] as HTMLElement;
-      if (correspondingImage && row) {
-        const rowElement = row as HTMLElement;
-        const rowHeight = rowElement.offsetHeight;
-        
-        console.log(`Zeile ${index}: Höhe=${rowHeight}, Position=${cumulativeTop}`);
-        
-        correspondingImage.style.top = `${cumulativeTop}px`;
-        
-        cumulativeTop += rowHeight;
-      }
-    });
-  }, 300); // Längeres Timeout für responsive Anpassung
+  private showOverlay(): void {
+    const overlay = document.querySelector('.overlay-projects') as HTMLElement;
+    if (overlay) overlay.classList.add('active');
+  }
+
+  private hideOverlay(): void {
+    const overlay = document.querySelector('.overlay-projects') as HTMLElement;
+    if (overlay) {
+      overlay.classList.remove('active');
+      this.currentProject = null; 
+    }
+  }
+
+  getFormattedProjectId(): string {
+    if (!this.currentProject) return '';
+    const index = this.projects.findIndex(p => p.id === this.currentProject!.id);
+    const projectNumber = index + 1; 
+    return projectNumber.toString().padStart(2, '0');
+  }
+
+   getSafeHtml(htmlString: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(htmlString);
+  }
+
+
 }
 
 
 
-@HostListener('window:resize')
-onResize(): void {
-  this.setImagePositions();
-}
-
-}
 
 
 

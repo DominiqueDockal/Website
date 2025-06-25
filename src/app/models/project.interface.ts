@@ -3,4 +3,7 @@ export interface Project {
   name: string;
   technologies: string[];
   image: string;
+  descriptionKey: string;
+  icons: string[];
 }
+

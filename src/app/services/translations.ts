@@ -39,6 +39,10 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'projects.box-headline': 'Projekte',
     'projects.main-text': 'Hier ist eine Auswahl meiner Arbeit - schau sie dir live an und teste selbst.',
 
+    'projects.pollo-loco.description': 'das hier ist ein Test',
+    'projects.da-bubble.description': 'das ist auch ein Test',
+    'projects.backend.description': 'Test',
+
 
 
   },
@@ -79,6 +83,11 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
 
     'projects.box-headline': 'Featured Projects',
     'projects.main-text': 'Explore a selection of my work here - Interact with projects to see my skills in action.',
+
+    'projects.pollo-loco.description': 'ists a test',
+    'projects.da-bubble.description': 'also a test',
+    'projects.backend.description': 'also a test',
+    
 
   }
 };
