@@ -17,7 +17,7 @@ export const PROJECTS_DATA: Project[] = [
     },
     {
     id: 'da-bubble',
-    name: 'Da Bubble',
+    name: 'DABubble',
     technologies: ['Angular', 'Firebase', 'TypeScript'],
     image: 'assets/images/DaBubble.png',
     descriptionKey: 'projects.da-bubble.description',
@@ -31,7 +31,7 @@ export const PROJECTS_DATA: Project[] = [
     },
   {
   id: 'backend',
-  name: 'Backend',
+  name: 'Projekt',
   technologies: ['XXX', 'abc', 'ABC'],
   image: 'assets/images/BackendDevSecOps.png',
   descriptionKey: 'projects.backend.description',

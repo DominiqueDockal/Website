@@ -82,7 +82,6 @@ $break-point-overlay-layout2: 360px;
 .main-text {
     color: var(--white);
     font-size: var(--font-size-small);
-    text-align: justify;
     font-family: var(--font-family-secondary);
     @media (max-width: $break-point-font) {
         font-size: var(--font-size-smallest);

@@ -42,7 +42,7 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'project.next': 'Nächstes Projekt',
 
     'projects.pollo-loco.description': 'Ein 2D Jump-and-Run-Spiel, entwickelt mit objektorientiertem JavaScript und HTML5 Canvas, das realistische Physiksimulation und präzise Kollisionserkennung bietet.' ,
-    'projects.da-bubble.description': 'Beschreibung von DaBubble folgt bald.',
+    'projects.da-bubble.description': 'Diese App ist ein Slack-Klon. Sie erleichtert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und umfassender Kanalorganisation.',
     'projects.backend.description': 'Hier sind weitere mögliche Backend/DevSecOps Projekte beschrieben',
 
 
@@ -89,7 +89,7 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'project.next': 'Next project',
 
     'projects.pollo-loco.description': 'A 2D platformer game built with object-oriented JavaScript and HTML5 Canvas, featuring realistic physics simulation and precise collision detection. ',
-    'projects.da-bubble.description': 'Description of DaBubble will follow soon',
+    'projects.da-bubble.description': 'This app is a Slack clone. It facilitates team communication and collaboration with its intuitive user interface, real-time messaging, and comprehensive channel organization.',
     'projects.backend.description': 'Additional Backend/DevSecOps projects are described here',
     
 
