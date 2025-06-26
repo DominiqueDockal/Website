@@ -1,8 +1,5 @@
 $break-point-layout: 900px;
 $break-point-font: 950px;
-$break-point-pictures: 1150px;
-$break-point-pictures2: 1050px;
-$break-point-pictures3: 1000px;
 $break-point-overlay-font: 1260px;
 $break-point-overlay-layout: 450px;
 $break-point-overlay-layout2: 360px;
@@ -29,9 +26,7 @@ $break-point-overlay-layout2: 360px;
 
 .project-table {
     flex: 0 0 70%; 
-    min-width: 300px;
     padding-top: 1rem;
-    min-width: auto;
     @media (max-width: $break-point-layout) {
         flex: 0 0 100%;   
     } 
@@ -54,22 +49,13 @@ $break-point-overlay-layout2: 360px;
 }
 
 .project-image {
-    width: 300px;
+    width: min(300px, 25vw); 
     height: auto;
     object-fit: cover;
     border-radius: var(--main-box-radius);
     opacity: 0;
     position: absolute;
     right: 0;
-    @media (max-width: $break-point-pictures) {
-        width: 280px; 
-    } 
-    @media (max-width: $break-point-pictures2) {
-        width: 260px; 
-    } 
-    @media (max-width: $break-point-pictures3) {
-        width: 240px; 
-    } 
 }
 
 .box-title {
@@ -102,8 +88,6 @@ $break-point-overlay-layout2: 360px;
         font-size: var(--font-size-smallest);
     }
 }
-
-.project-row {width: 100%;}
 
 .project-separator {
     height: 2px;
