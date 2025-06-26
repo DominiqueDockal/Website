@@ -11,11 +11,24 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent implements OnInit, AfterViewInit {
+export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
   private languageService = inject(LanguageService);
   private projectsService = inject(ProjectsService);
   private sanitizer = inject(DomSanitizer);
   private renderer = inject(Renderer2);
+
+  private readonly CSS_SELECTORS = {
+    OVERLAY: '.overlay-projects',
+    PROJECT_IMAGE: '.project-image',
+    PROJECT_ROW: '.project-row'
+  } as const;
+
+  private readonly CSS_CLASSES = {
+  OVERLAY_ACTIVE: 'active',
+  OVERLAY_OPEN: 'overlay-open'
+} as const;
+
+  isOverlayVisible = false;
   
   projects: Project[] = [];
   currentProject: Project | null = null; 
@@ -29,8 +42,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   ngOnDestroy(): void {
-    this.renderer.removeClass(document.body, 'overlay-open');
-  }
+  this.renderer.removeClass(document.body, this.CSS_CLASSES.OVERLAY_OPEN);
+}
 
   translate(key: string): string {
     return this.languageService.getTranslation(key);
@@ -38,7 +51,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   onProjectHover(projectId: string): void {
     this.hideAllImages();
-    const targetImage = document.querySelector(`[data-project="${projectId}"].project-image`) as HTMLElement;
+    const selector = `[data-project="${projectId}"]${this.CSS_SELECTORS.PROJECT_IMAGE}`;
+    const targetImage = document.querySelector(selector) as HTMLElement;
     if (targetImage) targetImage.style.opacity = '1';
   }
 
@@ -69,7 +83,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   private hideAllImages(): void {
-    const images = document.querySelectorAll('.project-image');
+    const images = document.querySelectorAll(this.CSS_SELECTORS.PROJECT_IMAGE);
     images.forEach(img => {
       (img as HTMLElement).style.opacity = '0';
     });
@@ -77,8 +91,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   private setImagePositions(): void {
     setTimeout(() => {
-      const projectRows = document.querySelectorAll('.project-row'); 
-      const images = document.querySelectorAll('.project-image');
+      const projectRows = document.querySelectorAll(this.CSS_SELECTORS.PROJECT_ROW); 
+      const images = document.querySelectorAll(this.CSS_SELECTORS.PROJECT_IMAGE);
       let cumulativeTop = 0;
       projectRows.forEach((row, index) => {
         const correspondingImage = images[index] as HTMLElement;
@@ -93,19 +107,21 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   private showOverlay(): void {
-    const overlay = document.querySelector('.overlay-projects') as HTMLElement;
+    this.isOverlayVisible = true;
+    const overlay = document.querySelector(this.CSS_SELECTORS.OVERLAY) as HTMLElement;
     if (overlay) {
-      overlay.classList.add('active');
-      this.renderer.addClass(document.body, 'overlay-open');
+      overlay.classList.add(this.CSS_CLASSES.OVERLAY_ACTIVE);
+      this.renderer.addClass(document.body, this.CSS_CLASSES.OVERLAY_OPEN);
     }
   }
 
   private hideOverlay(): void {
-    const overlay = document.querySelector('.overlay-projects') as HTMLElement;
+    this.isOverlayVisible = false;
+    const overlay = document.querySelector(this.CSS_SELECTORS.OVERLAY) as HTMLElement;
     if (overlay) {
-      overlay.classList.remove('active');
+      overlay.classList.remove(this.CSS_CLASSES.OVERLAY_ACTIVE);
       this.currentProject = null; 
-      this.renderer.removeClass(document.body, 'overlay-open');
+      this.renderer.removeClass(document.body, this.CSS_CLASSES.OVERLAY_OPEN);
     }
   }
 
