@@ -182,11 +182,11 @@ $break-point-overlay-layout2: 360px;
     z-index: 1000;
     display: none; 
     justify-content: center; 
-    align-items: flex-start;
+    align-items: center;
     overflow-y: auto;
-   -webkit-overflow-scrolling: touch;
-   touch-action: pan-y;
-   padding: 2rem 0;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    padding: 2rem 0;
     &.active {display: flex; }
 }
 
