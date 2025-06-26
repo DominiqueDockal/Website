@@ -120,6 +120,13 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     return this.sanitizer.bypassSecurityTrustHtml(htmlString);
   }
 
+  onNextProject(): void {
+    if (!this.currentProject || this.projects.length === 0) return;
+    const currentIndex = this.projects.findIndex(p => p.id === this.currentProject!.id);
+    const nextIndex = (currentIndex + 1) % this.projects.length;
+    this.currentProject = this.projects[nextIndex];
+  }
+
 
 }
 
