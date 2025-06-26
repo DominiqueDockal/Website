@@ -3,7 +3,6 @@ $break-point-font: 950px;
 $break-point-pictures: 1150px;
 $break-point-pictures2: 1050px;
 $break-point-pictures3: 1000px;
-$break-point-table: 400px;
 $break-point-overlay-font: 1260px;
 $break-point-overlay-layout: 450px;
 $break-point-overlay-layout2: 360px;
@@ -32,11 +31,9 @@ $break-point-overlay-layout2: 360px;
     flex: 0 0 70%; 
     min-width: 300px;
     padding-top: 1rem;
+    min-width: auto;
     @media (max-width: $break-point-layout) {
         flex: 0 0 100%;   
-    } 
-    @media (max-width: $break-point-table) {
-        min-width: auto;
     } 
 }
 
@@ -136,9 +133,7 @@ $break-point-overlay-layout2: 360px;
   gap: 3rem; 
   cursor: pointer;
   transition: background-color var(--transition) ease;
-   &:hover {
-    background-color: var(--box-background);
-    }
+   &:hover {background-color: var(--box-background);}
    &:hover .project-left svg {
     opacity: 1;
     transform: translateX(0);
@@ -187,10 +182,12 @@ $break-point-overlay-layout2: 360px;
     z-index: 1000;
     display: none; 
     justify-content: center; 
-    align-items: center;
-    &.active {
-        display: flex; 
-    }
+    align-items: flex-start;
+    overflow-y: auto;
+   -webkit-overflow-scrolling: touch;
+   touch-action: pan-y;
+   padding: 2rem 0;
+    &.active {display: flex; }
 }
 
 .overlay-content {
@@ -203,6 +200,8 @@ $break-point-overlay-layout2: 360px;
     border: 2px solid var(--main-violet);
     border-radius: var(--main-box-radius);
     display: flex;
+    overflow-y: auto;
+    margin: auto 0;
     @media (max-width: $break-point-layout) {
         padding: 0 var(--padding-main-lr-mobile);
         flex-direction: column-reverse;
@@ -230,9 +229,7 @@ $break-point-overlay-layout2: 360px;
     }
     &:hover {
         transform: scale(1.2);
-        .cross path {
-            fill:var(--main-violet);
-        }
+        .cross path {fill:var(--main-violet);}
     }
     @media (max-width: $break-point-overlay-layout) {
         right: 1rem;
@@ -260,17 +257,11 @@ $break-point-overlay-layout2: 360px;
     }
     svg {
         transition: transform var(--transition) ease;  
-        path {
-            transition: fill var(--transition) ease;
-        }
+        path {transition: fill var(--transition) ease;}
     }
     &:hover {
-        p {
-            color: var(--white); 
-        }
-        svg {
-            transform: translateX(5px); 
-        }
+        p {color: var(--white); }
+        svg {transform: translateX(5px); }
     }
     @media (max-width: $break-point-overlay-layout) {
         right: 1rem;
@@ -374,15 +365,11 @@ $break-point-overlay-layout2: 360px;
     text-align: center;
     padding: 14px 18px;
     cursor: pointer; 
-    svg {
-        transition: transform var(--transition) ease;
-    }
+    svg {transition: transform var(--transition) ease;}
     &:hover {
         border-color: var(--main-violet);
         color: var(--main-violet);
-         svg {
-            transform: translate(5px, -5px); 
-        }
+        svg {transform: translate(5px, -5px); }
     }
     @media (max-width: $break-point-overlay-layout) {
         font-size: var(--font-size-smallest);

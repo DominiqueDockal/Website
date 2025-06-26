@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, HostListener, AfterViewInit} from '@angular/core';
+import { Component, inject, OnInit, HostListener, AfterViewInit,Renderer2, OnDestroy} from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { ProjectsService } from '../../../services/projects.service';
 import { Project } from '../../../models/project.interface';
@@ -15,6 +15,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   private languageService = inject(LanguageService);
   private projectsService = inject(ProjectsService);
   private sanitizer = inject(DomSanitizer);
+  private renderer = inject(Renderer2);
   
   projects: Project[] = [];
   currentProject: Project | null = null; 
@@ -25,6 +26,10 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.setImagePositions();
+  }
+
+  ngOnDestroy(): void {
+    this.renderer.removeClass(document.body, 'overlay-open');
   }
 
   translate(key: string): string {
@@ -89,7 +94,10 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   private showOverlay(): void {
     const overlay = document.querySelector('.overlay-projects') as HTMLElement;
-    if (overlay) overlay.classList.add('active');
+    if (overlay) {
+      overlay.classList.add('active');
+      this.renderer.addClass(document.body, 'overlay-open');
+    }
   }
 
   private hideOverlay(): void {
@@ -97,6 +105,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     if (overlay) {
       overlay.classList.remove('active');
       this.currentProject = null; 
+      this.renderer.removeClass(document.body, 'overlay-open');
     }
   }
 

@@ -103,7 +103,6 @@ body {
     margin-block-end: 0; 
     overflow: hidden;
     position: relative;
-
     &:hover {
         border-color: var(--main-violet);
         color: var(--main-violet);
@@ -111,7 +110,6 @@ body {
             animation: continuousTextSlide var(--animation) linear infinite;
         }
     }
-
     span {
         display: inline-block; 
         font-size: inherit; 
@@ -173,6 +171,13 @@ body {
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
+}
+
+.overlay-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 
