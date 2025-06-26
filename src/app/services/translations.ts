@@ -90,7 +90,7 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
 
     'projects.pollo-loco.description': 'A 2D platformer game built with object-oriented JavaScript and HTML5 Canvas, featuring realistic physics simulation and precise collision detection. ',
     'projects.da-bubble.description': 'This app is a Slack clone. It facilitates team communication and collaboration with its intuitive user interface, real-time messaging, and comprehensive channel organization.',
-    'projects.backend.description': 'Additional Backend/DevSecOps projects are described here',
+    'projects.backend.description': 'Additional Backend/DevSecOps projects are described here.',
     
 
   }

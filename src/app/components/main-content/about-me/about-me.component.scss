@@ -16,7 +16,6 @@ $break-point-font: 950px;
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 2rem; 
-
     @media (max-width: $break-point-layout) {
     display: flex;
     flex-direction: column;
@@ -24,20 +23,17 @@ $break-point-font: 950px;
     gap: 2rem;
     height: auto; 
     padding: 0 var(--padding-main-lr-mobile);
-    }
-  
+    } 
 }
 
 .image-section {
   display: flex;
   justify-content: flex-start;
-
   img {
     width: 100%;
     height: 90%;
     object-fit: cover;
     border-radius: var(--main-box-radius);
-
     @media (max-width: $break-point-layout) {
       height: auto; 
       width: 100%;
@@ -56,7 +52,6 @@ $break-point-font: 950px;
     font-size: var(--font-size-large);
     color: var(--main-violet);
     font-family: var(--font-family-secondary);
-
     @media (max-width:$break-point-font) {
         font-size: var(--font-size-small);
     }
@@ -68,7 +63,6 @@ $break-point-font: 950px;
     font-weight: bold;
     margin-block-start: 0;
     margin-block-end: 0;
-
     @media (max-width: $break-point-font) {
         font-size: var(--font-size-title);
     }
@@ -79,7 +73,6 @@ $break-point-font: 950px;
     font-size: var(--font-size-small);
     text-align: justify;
     font-family: var(--font-family-secondary);
-
     @media (max-width: $break-point-font) {
         font-size: var(--font-size-smallest);
     }
@@ -102,19 +95,16 @@ $break-point-font: 950px;
   list-style: none;
   padding: 0;
   padding-bottom: 0.5rem;
-
   .list-item {
     display: flex;
     align-items: flex-start;
     margin-bottom: 1rem;
-
     .text {
       flex: 1;
       color: var(--white);
       font-family: var(--font-family-secondary);
       font-size: var(--font-size-small);
       font-weight: 300;
-
       @media (max-width: $break-point-font) {
         font-size: var(--font-size-smallest);
       }
@@ -127,9 +117,7 @@ $break-point-font: 950px;
       margin-right: 1rem; 
       margin-top: 0.2rem;
       fill: var(--main-violet);
-
     }
-
   }
 }
 
