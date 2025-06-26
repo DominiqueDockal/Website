@@ -53,8 +53,8 @@
                     @if (currentProject) {
                         <p class="id-overlay">{{getFormattedProjectId()}}</p>
                         <p class="project-name-overlay">{{currentProject.name}}</p>
-                        <p class="about-overlay">What is this project about?</p>
-                        <p class="description-overlay">{{translate(currentProject.descriptionKey)}}</p>
+                        <p class="about-overlay">{{translate('projects.about')}}</p>
+                        <p class="main-text">{{translate(currentProject.descriptionKey)}}</p>
                         
                         <div class="technologies-overlay">
                             @if (currentProject) {
@@ -68,14 +68,14 @@
                         </div>
                     }
                     <div class="button-container-overlay">
-                        <div class="button-overlay">
+                        <div class="button-overlay" title="GitHub">
                             <span>GitHub</span>
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.5675 3.39893L1.68683 12.2798C1.48047 12.486 1.25023 12.5842 0.996115 12.5743C0.741997 12.5643 0.511837 12.4563 0.305636 12.2501C0.0992746 12.0437 -0.00390625 11.8085 -0.00390625 11.5445C-0.00390625 11.2805 0.0992746 11.0453 0.305636 10.8389L9.15656 1.98802H1.78674C1.50802 1.98802 1.27267 1.89251 1.08069 1.70148C0.888542 1.51029 0.792469 1.27606 0.792469 0.998784C0.792469 0.721506 0.888542 0.485595 1.08069 0.291054C1.27267 0.0966718 1.50802 -0.000518799 1.78674 -0.000518799H11.5617C11.8405 -0.000518799 12.0759 0.0954747 12.268 0.287461C12.46 0.479607 12.556 0.715037 12.556 0.993752V10.7688C12.556 11.0475 12.4605 11.2829 12.2695 11.475C12.0783 11.667 11.844 11.763 11.5668 11.763C11.2895 11.763 11.0537 11.667 10.8593 11.475C10.6647 11.2829 10.5675 11.0475 10.5675 10.7688V3.39893Z" fill=var(--main-violet)/>
                             </svg>
 
                         </div>
-                        <div class="button-overlay">
+                        <div class="button-overlay" title="Live Test">
                             <span>Live Test</span>
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.5675 3.39893L1.68683 12.2798C1.48047 12.486 1.25023 12.5842 0.996115 12.5743C0.741997 12.5643 0.511837 12.4563 0.305636 12.2501C0.0992746 12.0437 -0.00390625 11.8085 -0.00390625 11.5445C-0.00390625 11.2805 0.0992746 11.0453 0.305636 10.8389L9.15656 1.98802H1.78674C1.50802 1.98802 1.27267 1.89251 1.08069 1.70148C0.888542 1.51029 0.792469 1.27606 0.792469 0.998784C0.792469 0.721506 0.888542 0.485595 1.08069 0.291054C1.27267 0.0966718 1.50802 -0.000518799 1.78674 -0.000518799H11.5617C11.8405 -0.000518799 12.0759 0.0954747 12.268 0.287461C12.46 0.479607 12.556 0.715037 12.556 0.993752V10.7688C12.556 11.0475 12.4605 11.2829 12.2695 11.475C12.0783 11.667 11.844 11.763 11.5668 11.763C11.2895 11.763 11.0537 11.667 10.8593 11.475C10.6647 11.2829 10.5675 11.0475 10.5675 10.7688V3.39893Z" fill=var(--main-violet)/>
@@ -86,9 +86,7 @@
                 </div>
                 <div class="right-side-overlay">
                 @if (currentProject) {
-                    <img [src]="currentProject.image" 
-                        [title]="currentProject.name" 
-                        class="overlay-image">
+                    <img [src]="currentProject.image" [title]="currentProject.name" class="overlay-image">
                     }
                 </div>
 
@@ -103,8 +101,8 @@
                     </svg>
                 </div>
                 
-                <div class="next-project">
-                    <p>Next Project</p>
+                <div class="next-project" [title]="translate('project.next')">
+                    <p>{{translate('project.next')}}</p>
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_3296_3480" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="32" height="32">
                         <rect x="4" y="4" width="32" height="32" fill="#D9D9D9"/>

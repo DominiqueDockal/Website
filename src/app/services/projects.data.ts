@@ -30,11 +30,27 @@ export const PROJECTS_DATA: Project[] = [
     ]
     },
   {
-    id: 'backend',
-    name: 'Backend',
-    technologies: ['XXX', 'abc', 'ABC'],
-    image: 'assets/images/BackendDevSecOps.png',
-    descriptionKey: 'projects.backend.description',
-    icons:[],
-  }
+  id: 'backend',
+  name: 'Backend',
+  technologies: ['XXX', 'abc', 'ABC'],
+  image: 'assets/images/BackendDevSecOps.png',
+  descriptionKey: 'projects.backend.description',
+  icons: [
+    `<svg width="24" height="24" viewBox="699 741 396 341"xmlns="http://www.w3.org/2000/svg">
+        <path d="M705.5 1078.5 897 748.5 1088.5 1078.5Z" stroke="#042433" stroke-width="6.875" stroke-miterlimit="8" fill="#CF3DB6" fill-rule="evenodd"/>
+      </svg>
+      `,
+
+      `<svg width="24" height="24" viewBox="699 741 396 341"xmlns="http://www.w3.org/2000/svg">
+        <path d="M705.5 1078.5 897 748.5 1088.5 1078.5Z" stroke="#042433" stroke-width="6.875" stroke-miterlimit="8" fill="#CF3DB6" fill-rule="evenodd"/>
+      </svg>
+      `,
+
+      `<svg width="24" height="24" viewBox="699 741 396 341"xmlns="http://www.w3.org/2000/svg">
+        <path d="M705.5 1078.5 897 748.5 1088.5 1078.5Z" stroke="#042433" stroke-width="6.875" stroke-miterlimit="8" fill="#CF3DB6" fill-rule="evenodd"/>
+      </svg>
+      `
+  ]
+}
+
 ];

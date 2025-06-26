@@ -4,6 +4,9 @@ $break-point-pictures: 1150px;
 $break-point-pictures2: 1050px;
 $break-point-pictures3: 1000px;
 $break-point-table: 400px;
+$break-point-overlay-font: 1260px;
+$break-point-overlay-layout: 450px;
+$break-point-overlay-layout2: 360px;
 
 .projects{
   width: 100%;
@@ -103,9 +106,7 @@ $break-point-table: 400px;
     }
 }
 
-.project-row {
-  width: 100%;
-}
+.project-row {width: 100%;}
 
 .project-separator {
     height: 2px;
@@ -194,7 +195,7 @@ $break-point-table: 400px;
 
 .overlay-content {
     max-width: 1440px; 
-    width: 100%;
+    width: 95%;
     height: 700px;
     padding: 0 var(--padding-main-lr); 
     position: relative;
@@ -204,6 +205,8 @@ $break-point-table: 400px;
     display: flex;
     @media (max-width: $break-point-layout) {
         padding: 0 var(--padding-main-lr-mobile);
+        flex-direction: column-reverse;
+        height: auto;
     }
 }
 
@@ -231,6 +234,9 @@ $break-point-table: 400px;
             fill:var(--main-violet);
         }
     }
+    @media (max-width: $break-point-overlay-layout) {
+        right: 1rem;
+    } 
 }
 
 .next-project{
@@ -248,6 +254,9 @@ $break-point-table: 400px;
         font-size: var(--font-size-small);
         font-family: var(--font-family-secondary);
         transition: color var(--transition) ease;
+        @media (max-width: $break-point-overlay-layout) {
+        font-size: var(--font-size-smallest);
+    } 
     }
     svg {
         transition: transform var(--transition) ease;  
@@ -263,6 +272,9 @@ $break-point-table: 400px;
             transform: translateX(5px); 
         }
     }
+    @media (max-width: $break-point-overlay-layout) {
+        right: 1rem;
+    } 
 }
 
 .right-side-overlay {
@@ -271,6 +283,13 @@ $break-point-table: 400px;
     align-items: center;
     justify-content: flex-end;
     padding:2rem;
+    @media (max-width: $break-point-layout) {
+        margin-top: 30%;
+        padding: 1rem;
+    }
+    @media (max-width: $break-point-overlay-layout) {
+        padding: 0.5rem;
+    } 
 }
 
 .overlay-image {
@@ -287,13 +306,30 @@ $break-point-table: 400px;
     justify-content: center;
     padding: 2rem;
     height: auto;
+    @media (max-width: $break-point-layout) {
+        margin-bottom: 30%;
+        padding: 1rem;
+    }
+     @media (max-width: $break-point-overlay-layout) {
+        padding: 0.5rem;
+    } 
 }
 
 .button-container-overlay{
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content:flex-start;
     gap: 2rem;
+    width: 100%; 
+    @media (max-width: $break-point-overlay-layout) {
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+    }
+    @media (max-width: $break-point-overlay-layout2) {
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+    }
 }
 
 .id-overlay {
@@ -303,6 +339,9 @@ $break-point-table: 400px;
     font-weight: 700;
     margin-block-end:0;
     margin-block-start:0;
+    @media (max-width: $break-point-overlay-font) {
+        font-size: var(--font-size-id-resp);
+    } 
 }
 
 .project-name-overlay {
@@ -311,6 +350,9 @@ $break-point-table: 400px;
     color: var(--white);
     margin-block-end:0;
     margin-block-start:0;
+    @media (max-width: $break-point-overlay-font) {
+        font-size: var(--font-size-larger);
+    }
 }
 
 .about-overlay {
@@ -319,12 +361,6 @@ $break-point-table: 400px;
     font-weight: 700;
 }
 
-.description-overlay {
-    font-size:var(--font-size-small);
-    font-family: var(--font-family-secondary);
-    color: var(--white);
-}
-  
 .button-overlay{
     display: flex;
     align-items: center;
@@ -348,6 +384,10 @@ $break-point-table: 400px;
             transform: translate(5px, -5px); 
         }
     }
+    @media (max-width: $break-point-overlay-layout) {
+        font-size: var(--font-size-smallest);
+        padding: 10px 14px;
+    }
 }
 
 .technologies-overlay {
@@ -359,12 +399,18 @@ $break-point-table: 400px;
     gap: 2rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
+     @media (max-width: $break-point-overlay-layout) {
+        gap: 0.5rem;
+    } 
 }
 
 .tech-item {
     display:flex;
     gap: 0.5rem;
-
+    align-items:center;
+    @media (max-width: $break-point-overlay-layout) {
+        gap: 0.2rem;
+    } 
 }
 
 
