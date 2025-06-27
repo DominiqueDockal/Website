@@ -19,17 +19,13 @@ export class ProjectsService {
   }
 
   getProjects(): Project[] {
-    if (!this.projectsArrayCache) {
-      this.projectsArrayCache = [...this.projects];
-    }
+    if (!this.projectsArrayCache) this.projectsArrayCache = [...this.projects];
     return this.projectsArrayCache;
   }
 
   getProjectById(id: string): Project | null {
     if (!id) return null;
-    if (this.projectByIdCache.has(id)) {
-      return this.projectByIdCache.get(id)!;
-    }
+    if (this.projectByIdCache.has(id)) return this.projectByIdCache.get(id)!;
     const project = this.projects.find(p => p.id === id) || null;
     this.projectByIdCache.set(id, project);
     return project;
@@ -62,24 +58,17 @@ export class ProjectsService {
   }
 
   private validateCurrentIndex(): void {
-    if (this.projects.length === 0) {
-      this.currentProjectIndex = 0;
-    } else if (this.currentProjectIndex >= this.projects.length) {
-      this.currentProjectIndex = 0;
-    } else if (this.currentProjectIndex < 0) {
-      this.currentProjectIndex = this.projects.length - 1;
-    }
+    if (this.projects.length === 0) this.currentProjectIndex = 0;
+    else if (this.currentProjectIndex >= this.projects.length) this.currentProjectIndex = 0;
+    else if (this.currentProjectIndex < 0) this.currentProjectIndex = this.projects.length - 1;
   }
 
   private warmCaches(): void {
-    this.projects.forEach(project => {
+    this.projects.forEach((project, index) => {
       this.projectByIdCache.set(project.id, project);
-      const index = this.projects.findIndex(p => p.id === project.id);
       const formattedNumber = (index + 1).toString().padStart(2, '0');
       this.formattedNumberCache.set(project.id, formattedNumber);
     });
     this.projectsArrayCache = [...this.projects];
   }
 }
-
-
