@@ -22,3 +22,22 @@
   }
 }
 
+.rotate-warning {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-main);
+  color: var(--main-violet);
+  text-align: center;
+  z-index: 9999;
+  p { 
+    font-size: var(--font-size-large);
+    margin: 1rem 0 0; 
+    font-weight: bold;
+    font-family: var(--font-family-primary);
+  }
+}
+

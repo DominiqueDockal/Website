@@ -1,7 +1,13 @@
-<app-header></app-header>
 
-<main>
-  <router-outlet></router-outlet>
-</main>
+@if (!isLandscape) {
+  <app-header></app-header>
+  <main>
+      <router-outlet></router-outlet>
+  </main>
+  <app-footer></app-footer>
 
-<app-footer></app-footer>
+} @else {
+  <div class="rotate-warning">
+    <p>{{translate('main.landscape')}}</p>
+  </div>
+}

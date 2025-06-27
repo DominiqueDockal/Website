@@ -2,6 +2,7 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
   de: {
     'main.email': 'E-Mail',
     'main.startpage': 'Startseite',
+    'main.landscape':'Bitte Gerät drehen',
 
     'footer.legalNotice': 'Impressum',
 
@@ -51,6 +52,7 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
   en: {
     'main.email': 'Email',
     'main.startpage': 'Startpage',
+    'main.landscape':'Please rotate your device',
 
     'footer.legalNotice': 'Legal Notice',
 
