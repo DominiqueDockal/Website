@@ -26,12 +26,14 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly CSS_CLASSES = {
   OVERLAY_ACTIVE: 'active',
   OVERLAY_OPEN: 'overlay-open'
-} as const;
+  } as const;
 
   isOverlayVisible = false;
-  
   projects: Project[] = [];
-  currentProject: Project | null = null; 
+
+  get currentProject(): Project | null {
+    return this.projectsService.getCurrentProject();
+  }
 
   ngOnInit(): void {
     this.projects = this.projectsService.getProjects();
@@ -61,7 +63,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onProjectClick(projectId: string): void {
-    this.currentProject = this.projects.find(p => p.id === projectId) || null;
+    this.projectsService.setCurrentProject(projectId);
     this.showOverlay();
   }
 
@@ -120,16 +122,13 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
     const overlay = document.querySelector(this.CSS_SELECTORS.OVERLAY) as HTMLElement;
     if (overlay) {
       overlay.classList.remove(this.CSS_CLASSES.OVERLAY_ACTIVE);
-      this.currentProject = null; 
       this.renderer.removeClass(document.body, this.CSS_CLASSES.OVERLAY_OPEN);
     }
   }
 
   getFormattedProjectId(): string {
     if (!this.currentProject) return '';
-    const index = this.projects.findIndex(p => p.id === this.currentProject!.id);
-    const projectNumber = index + 1; 
-    return projectNumber.toString().padStart(2, '0');
+    return this.projectsService.getFormattedProjectNumber(this.currentProject.id);
   }
 
    getSafeHtml(htmlString: string): SafeHtml {
@@ -137,10 +136,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onNextProject(): void {
-    if (!this.currentProject || this.projects.length === 0) return;
-    const currentIndex = this.projects.findIndex(p => p.id === this.currentProject!.id);
-    const nextIndex = (currentIndex + 1) % this.projects.length;
-    this.currentProject = this.projects[nextIndex];
+    this.projectsService.getNextProject();
   }
 
 
