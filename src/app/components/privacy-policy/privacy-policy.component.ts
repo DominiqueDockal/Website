@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
+
 
 @Component({
   selector: 'app-privacy-policy',
@@ -7,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './privacy-policy.component.scss'
 })
 export class PrivacyPolicyComponent {
+  private languageService = inject(LanguageService);
+
+  translate(key: string): string {
+    return this.languageService.getTranslation(key);
+  }
 
 }

@@ -1,1 +1,57 @@
-<p>contact works!</p>
+<div class="contact">
+<div class="contact-main">
+
+   <div class="left-container">
+    <p class="box-title">{{ translate('contact.contact') }}</p>
+    <p class="box-headline"> {{ translate('contact.work-together') }}</p>
+    <p class="problem">{{ translate('contact.problem') }}</p>
+    <p class="main-text"> {{ translate('contact.encourage') }}</p>
+    <p class="main-text-2"><span class="highlight"> {{ translate('contact.encourage2') }}</span> {{ translate('contact.encourage3') }}</p>
+   </div>
+
+   <div class="right-container">
+        <form action="" class="contact-form">
+            <div class="form-divider"></div>
+            
+            <div class="form-group">
+                <label for="name" class="form-label">{{ translate('form.name') }}</label>
+                <input [placeholder]=" translate('placeholder.name')" type="text" id="name" name="name" class="form-input" required>
+            </div>
+            
+            <div class="form-divider"></div>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">{{ translate('form.email') }}</label>
+                <input placeholder="email@email.com" type="email" id="email" name="email" class="form-input" required>
+            </div>
+            
+            <div class="form-divider"></div>
+            
+            <div class="form-group">
+                <label for="message" class="form-label">{{ translate('form.text') }}</label>
+                <textarea [placeholder]=" translate('placeholder.text')" id="message" name="message" class="form-input form-textarea" rows="1" required></textarea>
+            </div>
+            
+            <div class="form-divider"></div>
+            
+            <div class="checkbox-group">
+                <input title=""  type="checkbox" id="privacy" name="privacy" class="form-checkbox" required>
+                <label for="privacy" class="checkbox-label">
+                    {{ translate('form.privacy1') }}<a [routerLink]="getPrivacyRoute()" [title]="translate('form.privacy2')" class="privacy-link">{{ translate('form.privacy2') }}</a> {{ translate('form.privacy3') }}
+                </label>
+            </div>
+
+            <div class="button-contact">
+                <p type="submit" class="button">
+                    <span [title]="translate('form.send')" >{{ translate('form.button')}}</span>
+                </p>
+            </div>
+        </form>
+    </div>
+
+
+
+    
+</div>
+
+</div>

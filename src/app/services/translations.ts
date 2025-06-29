@@ -46,6 +46,27 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'projects.da-bubble.description': 'Diese App ist ein Slack-Klon. Sie erleichtert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und umfassender Kanalorganisation.',
     'projects.backend.description': 'Hier sind weitere mögliche Backend/DevSecOps Projekte beschrieben',
 
+    'contact.contact': 'Kontakt',
+    'contact.work-together': 'Lass uns loslegen',
+    'contact.problem': 'Du brauchst eine Lösung?',
+    'contact.encourage':'Dafür bin ich da - mit durchdachtem Vorgehen und strukturierter Umsetzung \
+                         entstehen passende Lösungen.',
+    'contact.encourage2':'Erzähl mir von deinem Vorhaben.',
+    'contact.encourage3':'Ich bin sicher ich kann dir helfen!',
+
+    'form.name': 'Wie heißt du?',
+    'form.email': 'Wie lautet deine E-Mail Adresse?',
+    'form.text': 'Wie kann ich dir helfen?',
+
+    'placeholder.name': 'Hier kommt dein Name rein',
+    'placeholder.text': 'Hallo Dominique, ich interessiere mich für ...',
+
+    'form.privacy1':' Ich hab die',
+    'form.privacy2':' Datenschutzerklärung',
+    'form.privacy3':' gelesen und stimme der Verarbeitung meiner Daten wie dargelegt zu.',
+    'form.send':'Abschicken',
+    'form.button': "Sag Hallo :)",
+
 
 
   },
@@ -94,6 +115,26 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'projects.da-bubble.description': 'This app is a Slack clone. It facilitates team communication and collaboration with its intuitive user interface, real-time messaging, and comprehensive channel organization.',
     'projects.backend.description': 'Additional Backend/DevSecOps projects are described here.',
     
+    'contact.contact': 'Contact me',
+    'contact.work-together': 'Let\'s work together',
+    'contact.problem': 'Got a problem to solve?',
+    'contact.encourage': 'That\'s what I\'m here for - with thoughtful planning and structured implementation, fitting solutions emerge.',
+    'contact.encourage2': 'Tell me about your project.',
+    'contact.encourage3': 'I\'m sure I can help!',
+
+    'form.name': 'What\'s your name?',
+    'form.email': 'What\'s your email?',
+    'form.text': 'How can I help you?',
+
+    'placeholder.name': 'Your name goes here',
+    'placeholder.text': 'Hello Dominique, I\'m interested in ...',
+
+    'form.privacy1':' I\'ve read the',
+    'form.privacy2':' privacy policy',
+    'form.privacy3':' and agree to the processing of my data as outlined.',
+    'form.send':'Send',
+    'form.button': "Say Hello :)",
+
 
   }
 };

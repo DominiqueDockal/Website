@@ -31,8 +31,8 @@ export const PROJECTS_DATA: Project[] = [
     },
   {
   id: 'backend',
-  name: 'Projekt',
-  technologies: ['XXX', 'abc', 'ABC'],
+  name: 'XXX',
+  technologies: ['XYZ', 'abc', 'ABC'],
   image: 'assets/images/BackendDevSecOps.png',
   descriptionKey: 'projects.backend.description',
   icons: [
