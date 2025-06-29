@@ -187,6 +187,11 @@ export class LanguageService {
       }, 100);
     });
   }
+
+  navigateToHomeWithoutScroll() {
+    const homeRoute = this.getHomeRoute();
+    this.router.navigate([homeRoute]);
+  }
 }
 
 
