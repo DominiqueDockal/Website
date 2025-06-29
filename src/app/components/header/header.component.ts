@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, OnDestroy,  HostListener } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
 
@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 })
 
 export class HeaderComponent implements OnInit, OnDestroy {
+  private router = inject(Router);
   private languageService = inject(LanguageService);
   private subscription?: Subscription;
   currentLanguage: string = 'de';
@@ -71,10 +72,28 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const burgerMenu = document.querySelector('.burger-menu');
     if (this.isSidebarOpen && sidebar && !sidebar.contains(target) && burgerMenu && !burgerMenu.contains(target)) this.closeSidebar();
   }
-  
 
+  navigateToSection(sectionId: string) {
+    const currentUrl = this.router.url.split('?')[0].split('#')[0];
+    const homeRoute = this.languageService.getHomeRoute();
+    this.closeSidebar();
+    if (currentUrl === homeRoute) {
+      this.scrollToSection(sectionId);
+    } else {
+      this.languageService.navigateToHomeSection(sectionId);
+    }
+}
 
-
-
+  private scrollToSection(sectionId: string) {
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 100);
+  }
 
 }

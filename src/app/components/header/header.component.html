@@ -42,9 +42,9 @@
                 </div>
                 }
             </div>
-            <a href="#" [title]="translate('nav.about')">{{ translate('nav.about') }}</a>
-            <a href="#" [title]="translate('nav.expertise')">{{ translate('nav.expertise') }}</a>
-            <a href="#" [title]="translate('nav.projects')">{{ translate('nav.projects') }}</a>
+            <a (click)="navigateToSection('about')" [title]="translate('nav.about')">{{ translate('nav.about') }}</a>
+            <a (click)="navigateToSection('skills')"  [title]="translate('nav.expertise')">{{ translate('nav.expertise') }}</a>
+            <a (click)="navigateToSection('projects')" [title]="translate('nav.projects')">{{ translate('nav.projects') }}</a>
         </div>
 
         <a class="logo" [routerLink]="getHomeRoute()" [title]="translate('main.startpage')">
@@ -127,9 +127,9 @@
 
 <div class="sidebar-overlay" [class.active]="isSidebarOpen" (click)="closeSidebar()">
 <div class="sidebar" [class.active]="isSidebarOpen" (click)="onSidebarClick($event)">
-    <a href="#" [title]="translate('nav.about')">{{ translate('nav.about') }}</a>
-    <a href="#" [title]="translate('nav.expertise')">{{ translate('nav.expertise') }}</a>
-    <a href="#" [title]="translate('nav.projects')">{{ translate('nav.projects') }}</a>
+    <a (click)="navigateToSection('about')" [title]="translate('nav.about')">{{ translate('nav.about') }}</a>
+    <a (click)="navigateToSection('skills')"  [title]="translate('nav.expertise')">{{ translate('nav.expertise') }}</a>
+    <a (click)="navigateToSection('projects')" [title]="translate('nav.projects')">{{ translate('nav.projects') }}</a>
 
     <div class="button-switch" (click)="toggleLanguage()" [class.english]="currentLanguage === 'en'"[class.german]="currentLanguage === 'de'">    
         <!-- German State -->

@@ -14,4 +14,9 @@ export class HeroComponent {
     return this.languageService.getTranslation(key);
   }
 
+  openExternalLink(url: string): void {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
 }
+
+

@@ -78,6 +78,7 @@ header {
     text-decoration: none;
     position: relative;
     transition: all var(--transition) ease;
+    cursor:pointer;
     &::before {
         content: '';
         position: absolute;

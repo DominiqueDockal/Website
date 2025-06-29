@@ -25,7 +25,7 @@ export const routes: Routes = [
     title: 'Legal Notice'
   },
   {
-    path: 'Datenschutz',
+    path: 'datenschutz',
     component: PrivacyPolicyComponent,
     title: 'Datenschutz'
   },

@@ -18,7 +18,7 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
                         nachhaltige und durchdachte Lösungen zu finden.',
     'about.location': 'Stuttgart oder Remote - flexibel und fokussiert.',
     'about.mindset': 'Ich bin von Natur aus neugierig und lerne neue Technologien schnell. \
-                      Jede Herausforderung sehe ich als Chance, meine Fähigkeiten zu erweitern. \
+                      Jede Herausforderung sehe ich als Chance, meine Fähigkeiten zu erweitern \
                       und innovative Lösungsansätze zu entwerfen.',
     'about.problem-solving': 'Beim Problemlösen gehe ich strukturiert und analytisch vor. \
                               Ich zerlege komplexe Aufgaben systematisch, erkenne Muster und \

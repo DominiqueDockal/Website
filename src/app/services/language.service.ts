@@ -20,6 +20,9 @@ export class LanguageService {
   private routeCache = new Map<string, string>();
   private translationCache = new Map<string, string>();
 
+  private scrollToSectionSubject = new BehaviorSubject<string | null>(null);
+  public scrollToSection$ = this.scrollToSectionSubject.asObservable();
+
   private static readonly ROUTE_CONFIG: Record<RouteType, Record<Language, string>> = {
     legal: { en: '/legal-notice', de: '/impressum' },
     privacy: { en: '/privacy-policy', de: '/datenschutz' },
@@ -174,6 +177,15 @@ export class LanguageService {
     if (englishRoutes.some(route => cleanUrl === route || cleanUrl.startsWith(route))) return 'en';
     if (germanRoutes.some(route => cleanUrl === route || cleanUrl.startsWith(route))) return 'de';
     return null;
+  }
+
+  navigateToHomeSection(sectionId: string) {
+    const homeRoute = this.getHomeRoute();
+    this.router.navigate([homeRoute]).then(() => {
+      setTimeout(() => {
+        this.scrollToSectionSubject.next(sectionId); 
+      }, 100);
+    });
   }
 }
 
