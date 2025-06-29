@@ -52,8 +52,8 @@
         <p class="title">Frontend Developer</p>
         <p class="name">Dominique Dockal</p>
             <div class="button-section">
-                <p class="button" [title]="translate('hero.my-work')"><span>{{translate('hero.my-work')}}</span></p>
-                <p class="button" [title]="translate('hero.contact')"><span>{{translate('hero.contact')}}</span></p>
+                <p (click)="navigateToProjects()"class="button" [title]="translate('hero.my-work')"><span>{{translate('hero.my-work')}}</span></p>
+                <p (click)="navigateToContact()" class="button" [title]="translate('hero.contact')"><span>{{translate('hero.contact')}}</span></p>
             </div>
     </div>
     

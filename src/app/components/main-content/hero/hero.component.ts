@@ -17,6 +17,26 @@ export class HeroComponent {
   openExternalLink(url: string): void {
     window.open(url, '_blank', 'noopener,noreferrer');
   }
+
+ navigateToSection(sectionId: string): void {
+  setTimeout(() => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }, 100);
+}
+
+navigateToContact(): void {
+  this.navigateToSection('contact');
+}
+
+navigateToProjects(): void {
+  this.navigateToSection('projects');
+}
 }
 
 

@@ -14,6 +14,15 @@ export class SkillsComponent {
     return this.languageService.getTranslation(key);
   }
 
-  
-
+  navigateToContact() {
+    setTimeout(() => {
+      const element = document.getElementById('contact');
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 100);
+  }
 }

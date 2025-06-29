@@ -8,7 +8,7 @@
                 <p class="main-text">{{translate('skills.main-text')}}</p> 
                 <p class="another-skill">{{translate('skills.another-skill')}} <span class="highlight">{{translate('skills.highlight')}}</span></p>
                 <p class="sub-text">{{translate('skills.sub-text')}}</p> 
-                <p class="button"  [title]="translate('skills.button')"><span>{{translate('skills.button')}}</span></p>
+                <p (click)="navigateToContact()" class="button"  [title]="translate('skills.button')"><span>{{translate('skills.button')}}</span></p>
             </div>
         </div>
 
