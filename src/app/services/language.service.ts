@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { TRANSLATIONS } from './translations';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -20,7 +20,7 @@ export class LanguageService {
   private routeCache = new Map<string, string>();
   private translationCache = new Map<string, string>();
 
-  private scrollToSectionSubject = new BehaviorSubject<string | null>(null);
+  private scrollToSectionSubject = new Subject<string>();  
   public scrollToSection$ = this.scrollToSectionSubject.asObservable();
 
   private static readonly ROUTE_CONFIG: Record<RouteType, Record<Language, string>> = {
