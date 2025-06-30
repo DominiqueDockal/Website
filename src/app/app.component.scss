@@ -15,8 +15,7 @@
 
 ::ng-deep app-footer {
   height: 150px; 
-  flex-shrink: 0;
-  
+  flex-shrink: 0;  
   @media (max-width: 800px) {
     height: 200px;
   }

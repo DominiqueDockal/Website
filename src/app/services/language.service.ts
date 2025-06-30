@@ -51,7 +51,7 @@ export class LanguageService {
 
   getLegalNoticeRoute(): string {
   return this.currentLanguage.value === 'en' ? '/legal-notice' : '/impressum';
-}
+  }
 
   getPrivacyRoute(): string {
     return this.currentLanguage.value === 'en' ? '/privacy-policy' : '/datenschutz';
