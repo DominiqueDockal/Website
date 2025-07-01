@@ -5,6 +5,7 @@
   --box-background:#342030;
   --strip-background: rgba(52, 32, 48, 0.7);
   --white: white;
+  --error: #EC7B7B;
   --overlay: rgba(0, 0, 0, 0.5);
   --gradient-main: linear-gradient(50deg, var(--main-grey) 36.26%, var(--main-violet-dark) 93.28%);
   --gradient-header:linear-gradient(162deg, var(--main-grey) 36.26%, var(--main-violet-dark) 93.28%);
@@ -23,6 +24,7 @@
   --font-size-name-resp2: 3.2em;       /* 48px */
   --font-size-title: 2.5em; /* entspricht 40px */
   --font-size-banner: 2em ;   /*32px */
+  --font-size-error: 0.875em; /* 14px */ 
   --transition: 0.1s;
   --animation: 2s;
   --padding-main-lr: 2rem;

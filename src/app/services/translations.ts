@@ -63,6 +63,15 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'form.privacy3':' gelesen und stimme der Verarbeitung meiner Daten wie dargelegt zu.',
     'form.send':'Abschicken',
     'form.button': "Sag Hallo :)",
+    'form.privacy.error':'Bitte akzeptieren Sie die Datenschutzerklärung.',
+    'form.name.error.required': 'Name ist erforderlich',
+    'form.email.error.required': 'E-Mail ist erforderlich',
+    'form.email.error.invalid' : 'Keine gültige E-Mail Adresse',
+    'form.message.error.required': 'Nachricht ist erforderlich',
+    'form.message.error.minlength': 'Mindestens {{length}} Zeichen erforderlich',
+    'form.error.invalid': 'Ungültige Eingabe',
+    'form.success.message': 'Nachricht erfolgreich gesendet!',
+    'form.error.message': 'Fehler beim Senden der Nachricht',
 
     'legal.legal': 'Impressum',
     'legal.owner': 'Anbieter',
@@ -151,6 +160,8 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'privacy.generated_by_link2': 'Kölner IT- und Datenschutz Anwalt Christian Solmecke',
     'privacy.generated_by_end': ' erstellt.',
 
+    
+
   },
   en: {
     'main.email': 'Email',
@@ -213,6 +224,15 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'form.privacy3':' and agree to the processing of my data as outlined.',
     'form.send':'Send',
     'form.button': "Say Hello :)",
+    'form.privacy.error': 'Please accept the privacy policy.',
+    'form.name.error.required': 'Name is required',
+    'form.email.error.required': 'Email is required',
+    'form.email.error.invalid': 'Invalid email address',
+    'form.message.error.required': 'Message is required',
+    'form.message.error.minlength': 'At least {{length}} characters required',
+    'form.error.invalid': 'Invalid input',
+    'form.success.message': 'Message sent successfully!',
+    'form.error.message': 'Error sending message',
 
     'legal.legal': 'Legal Notice',
     'legal.owner': 'Provider',

@@ -116,21 +116,42 @@ $break-point-font: 950px;
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .form-input {
     width: 100%;
-    background: transparent;
+    background: transparent !important;
     color: var(--white);
     font-family: var(--font-family-secondary);
     font-size: var(--font-size-small);
-    border: none;
-    outline: none;
+    border: none !important;
+    outline: none !important;
     padding: 0;
-    box-shadow: none;
+    box-shadow: none !important;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px var(--main-grey) inset !important;
+        -webkit-text-fill-color: var(--white) !important;
+        background: transparent !important;
+        border: none !important;
+    }
+    &:-moz-autofill {
+        background: transparent !important;
+        border: none !important;
+    }
+    &:focus {
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
     @media (max-width:$break-point-font) {
         font-size: var(--font-size-smallest);
     }
@@ -144,6 +165,13 @@ $break-point-font: 950px;
     overflow: hidden;
     line-height: 1.5;
     vertical-align: top;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px var(--main-grey) inset !important;
+        -webkit-text-fill-color: var(--white) !important;
+    }
 }
 
 .form-input::placeholder {
@@ -212,8 +240,114 @@ $break-point-font: 950px;
   justify-content: center;
   padding-top: 3rem;
   padding-bottom: 5rem;
+}
+
+.checkbox-error {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    color: var(--error);
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-error);
+    padding-top: 0.5rem;
+    width: 100%;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-5px);
+    animation: fadeInError 0.2s ease-out forwards;
+}
+
+@keyframes fadeInError {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-input.error::placeholder {
+    color: var(--error) !important;
+    opacity: 1 !important;
+}
+
+.form-input.error:not(:focus) {
+    color: var(--error) !important;
+}
+
+.form-input.error:focus {
+    color: var(--white) !important;
 
 }
+
+
+
+
+/*   */
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  min-width: 300px;
+  max-width: 90vw; 
+  height: 100px;
+  padding: 0;
+  border-radius: 8px;
+  border: 2px solid var(--main-violet);
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.3),     
+    0 0 30px rgba(255, 255, 255, 0.1),     
+    0 4px 12px rgba(0, 0, 0, 0.3);        
+  animation: slideInBounce 0.6s ease-out;
+  &.toast-success, 
+  &.toast-error {
+    background: var(--main-grey);
+  }
+}
+
+.toast-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  color: var(--white); 
+  filter: brightness(1.2);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100%;
+  gap: 1rem;
+}
+
+.toast-message {
+  flex: 1;
+  font-size: var(--font-size-small);
+  text-align: center; 
+  color: var(--white);
+}
+
+@keyframes slideInBounce {
+  0% {
+    transform: translate(120vw, -50%);
+    opacity: 0;
+  }
+  60% {
+    transform: translate(-55%, -50%); 
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-45%, -50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
 
 
 

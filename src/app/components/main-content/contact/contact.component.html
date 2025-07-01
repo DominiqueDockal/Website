@@ -10,48 +10,106 @@
    </div>
 
    <div class="right-container">
-        <form action="" class="contact-form">
-            <div class="form-divider"></div>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="form-divider"></div>
+        
+        <div class="form-group">
+            <label for="name" class="form-label">{{ translate('form.name') }}</label>
+            <input 
+                [placeholder]="getPlaceholder('name', translate('placeholder.name'))" 
+                type="text" 
+                id="name" 
+                formControlName="name"
+                class="form-input"
+                [class.error]="isFieldInvalid('name') || showingErrors['name']"
+                (focus)="onFieldFocus('name')"
+                (blur)="onFieldBlur('name')">
+        </div>
+        
+        <div class="form-divider"></div>
+        
+        <div class="form-group">
+            <label for="email" class="form-label">{{ translate('form.email') }}</label>
+            <input 
+                [placeholder]="getPlaceholder('email', 'email@email.com')" 
+                type="email" 
+                id="email" 
+                formControlName="email"
+                class="form-input"
+                [class.error]="isFieldInvalid('email') || showingErrors['email']"
+                (focus)="onFieldFocus('email')"
+                (blur)="onFieldBlur('email')">
+        </div>
+        
+        <div class="form-divider"></div>
+        
+        <div class="form-group">
+            <label for="message" class="form-label">{{ translate('form.text') }}</label>
+            <textarea 
+                [placeholder]="getPlaceholder('message', translate('placeholder.text'))" 
+                id="message" 
+                formControlName="message"
+                class="form-input form-textarea"
+                [class.error]="isFieldInvalid('message') || showingErrors['message']"
+                rows="1" 
+                (focus)="onFieldFocus('message')"
+                (blur)="onFieldBlur('message')">
+            </textarea>
+        </div>
+        
+        <div class="form-divider"></div>
+        
+        <div class="checkbox-group">
+            <input 
+                type="checkbox" 
+                id="privacy" 
+                formControlName="privacy"
+                class="form-checkbox"
+                [class.error]="hasPrivacyError()">
+            <label for="privacy" class="checkbox-label">
+                {{ translate('form.privacy1') }}
+                <a [routerLink]="getPrivacyRoute()" [title]="translate('form.privacy2')" class="privacy-link">
+                    {{ translate('form.privacy2') }}
+                </a> 
+                {{ translate('form.privacy3') }}
+            </label>
             
-            <div class="form-group">
-                <label for="name" class="form-label">{{ translate('form.name') }}</label>
-                <input [placeholder]=" translate('placeholder.name')" type="text" id="name" name="name" class="form-input" required>
-            </div>
-            
-            <div class="form-divider"></div>
-            
-            <div class="form-group">
-                <label for="email" class="form-label">{{ translate('form.email') }}</label>
-                <input placeholder="email@email.com" type="email" id="email" name="email" class="form-input" required>
-            </div>
-            
-            <div class="form-divider"></div>
-            
-            <div class="form-group">
-                <label for="message" class="form-label">{{ translate('form.text') }}</label>
-                <textarea [placeholder]=" translate('placeholder.text')" id="message" name="message" class="form-input form-textarea" rows="1" required></textarea>
-            </div>
-            
-            <div class="form-divider"></div>
-            
-            <div class="checkbox-group">
-                <input title=""  type="checkbox" id="privacy" name="privacy" class="form-checkbox" required>
-                <label for="privacy" class="checkbox-label">
-                    {{ translate('form.privacy1') }}<a [routerLink]="getPrivacyRoute()" [title]="translate('form.privacy2')" class="privacy-link">{{ translate('form.privacy2') }}</a> {{ translate('form.privacy3') }}
-                </label>
-            </div>
+            @if (hasPrivacyError()) {
+                <div class="checkbox-error">
+                    {{ getPrivacyErrorMessage() }}
+                </div>
+            }
+        </div>
 
-            <div class="button-contact">
-                <p type="submit" class="button">
-                    <span  [title]="translate('form.send')" >{{ translate('form.button')}}</span>
-                </p>
-            </div>
-        </form>
-    </div>
-
-
-
-    
+        <div class="button-contact">
+            <button 
+                type="submit" 
+                class="button contact-button"
+                [title]="translate('form.send')">
+                <span>{{ translate('form.button') }}</span>
+            </button>
+        </div>
+    </form>
+    </div>  
 </div>
+
+@if (showSuccessMessage) {
+  <div class="toast toast-success">
+    <div class="toast-content">
+         <span class="toast-icon">✓</span>
+      <span class="toast-message">{{ translate('form.success.message') }}</span>
+    </div>
+  </div>
+}
+
+@if (showErrorMessage) {
+  <div class="toast toast-error">
+    <div class="toast-content">
+        <span class="toast-icon">⚠</span>
+      <span class="toast-message">{{ translate('form.error.message') }}</span>
+    </div>
+  </div>
+}
+
 
 </div>
