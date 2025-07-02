@@ -16,7 +16,6 @@ $break-point-font: 950px;
     display: flex;
     gap: 2rem; 
     @media (max-width: $break-point-layout) {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
@@ -278,10 +277,6 @@ $break-point-font: 950px;
 
 }
 
-
-
-
-/*   */
 .toast {
   position: fixed;
   top: 50%;

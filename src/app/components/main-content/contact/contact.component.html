@@ -84,6 +84,7 @@
         <div class="button-contact">
             <button 
                 type="submit" 
+                [disabled]="isSubmitting"
                 class="button contact-button"
                 [title]="translate('form.send')">
                 <span>{{ translate('form.button') }}</span>

@@ -215,7 +215,7 @@ export class ContactComponent {
         }
         
         this.isSubmitting = false;
-      }, 1500); 
+      }, 500); 
       
       return; 
     }
