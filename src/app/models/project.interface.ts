@@ -5,5 +5,7 @@ export interface Project {
   image: string;
   descriptionKey: string;
   icons: string[];
+  githubUrl: string;
+  liveUrl: string;
 }
 

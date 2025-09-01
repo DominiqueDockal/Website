@@ -42,8 +42,8 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'projects.about':'Um was geht es in dem Projekt?',
     'project.next': 'Nächstes Projekt',
     'projects.pollo-loco.description': 'Ein 2D Jump-and-Run-Spiel, entwickelt mit objektorientiertem JavaScript und HTML5 Canvas, das realistische Physiksimulation und präzise Kollisionserkennung bietet.' ,
-    'projects.da-bubble.description': 'Diese App ist ein Slack-Klon. Sie erleichtert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und umfassender Kanalorganisation.',
-    'projects.backend.description': 'Hier sind weitere mögliche Backend/DevSecOps Projekte beschrieben',
+    'projects.project2.description': 'Hier sind weitere mögliche Projekte beschrieben',
+    'projects.project3.description': 'Hier sind weitere mögliche Projekte beschrieben',
 
     'contact.contact': 'Kontakt',
     'contact.work-together': 'Lass uns loslegen',
@@ -204,8 +204,8 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'projects.about':'What is this project about?',
     'project.next': 'Next project',
     'projects.pollo-loco.description': 'A 2D platformer game built with object-oriented JavaScript and HTML5 Canvas, featuring realistic physics simulation and precise collision detection. ',
-    'projects.da-bubble.description': 'This app is a Slack clone. It facilitates team communication and collaboration with its intuitive user interface, real-time messaging, and comprehensive channel organization.',
-    'projects.backend.description': 'Additional Backend/DevSecOps projects are described here.',
+    'projects.project2.description': 'Additional projects are described here.',
+    'projects.project3.description': 'Additional projects are described here.',
     
     'contact.contact': 'Contact me',
     'contact.work-together': 'Let\'s work together',
