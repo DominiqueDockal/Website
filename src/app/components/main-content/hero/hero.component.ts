@@ -37,6 +37,12 @@ navigateToContact(): void {
 navigateToProjects(): void {
   this.navigateToSection('projects');
 }
+
+openMailto(email: string) {
+  window.open(`mailto:${email}`, '_blank');
 }
+}
+
+
 
 

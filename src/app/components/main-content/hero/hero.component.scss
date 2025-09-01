@@ -8,6 +8,7 @@ $break-point-lines: 600px;
 .hero{
   width: 100%;
   min-height: 800px; /* anpassen an text später*/
+  height: calc(100vh - 100px);
   background: var(--gradient-main);
   display: flex;
   align-items: center; 
