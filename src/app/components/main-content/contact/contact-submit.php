@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-// ⚠️ HIER ANPASSEN: Ihre echte Domain einsetzen (für Production)
+// HIER ANPASSEN: Ihre echte Domain einsetzen (für Production)
 header('Access-Control-Allow-Origin: *'); // Ändern zu: https://ihre-domain.de
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
@@ -70,7 +70,7 @@ if (!empty($errors)) {
     exit;
 }
 
-// ⚠️ HIER ANPASSEN: Ihre echte E-Mail-Adresse einsetzen
+//HIER ANPASSEN: Ihre echte E-Mail-Adresse einsetzen
 $to = 'ihre-echte-email@ihre-domain.de'; // BEISPIEL: kontakt@meinefirma.de
 
 // E-Mail-Inhalt zusammenstellen
@@ -82,7 +82,7 @@ $message .= "\n\n---\n";
 $message .= "Gesendet am: " . date('Y-m-d H:i:s') . "\n";
 $message .= "IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
 
-// ⚠️ HIER ANPASSEN: Ihre echte Domain einsetzen
+//HIER ANPASSEN: Ihre echte Domain einsetzen
 $headers = "From: noreply@ihre-domain.de\r\n"; // BEISPIEL: noreply@meinefirma.de
 $headers .= "Reply-To: " . $data['email'] . "\r\n";
 $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
