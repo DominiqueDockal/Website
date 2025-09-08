@@ -1,28 +1,23 @@
 <?php
 header('Content-Type: application/json');
-// HIER ANPASSEN: Ihre echte Domain einsetzen (für Production)
-header('Access-Control-Allow-Origin: *'); // Ändern zu: https://ihre-domain.de
+header('Access-Control-Allow-Origin: https://dominique-dockal.de'); 
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// Nur POST-Requests akzeptieren
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['status' => 'error', 'message' => 'Method not allowed']);
     exit;
 }
 
-// JSON-Daten aus Angular empfangen
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
-// Prüfen ob JSON gültig ist
 if (json_last_error() !== JSON_ERROR_NONE) {
     echo json_encode(['status' => 'error', 'message' => 'Invalid JSON']);
     exit;
 }
 
-// Einfacher Spam-Schutz: Max 1 Submit alle 30 Sekunden
 session_start();
 $now = time();
 $lastSubmit = $_SESSION['last_submit'] ?? 0;
@@ -33,12 +28,12 @@ if ($now - $lastSubmit < 30) {
 }
 $_SESSION['last_submit'] = $now;
 
-// Input-Daten bereinigen (Sicherheit)
+
 $data['name'] = htmlspecialchars(trim($data['name'] ?? ''), ENT_QUOTES, 'UTF-8');
 $data['email'] = filter_var(trim($data['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $data['message'] = htmlspecialchars(trim($data['message'] ?? ''), ENT_QUOTES, 'UTF-8');
 
-// Validierung der Formulardaten
+
 $errors = [];
 
 if (empty($data['name'])) {
@@ -61,7 +56,7 @@ if (!isset($data['privacy']) || !$data['privacy']) {
     $errors[] = 'Datenschutzerklärung muss akzeptiert werden';
 }
 
-// Bei Validierungsfehlern: Fehler zurücksenden
+
 if (!empty($errors)) {
     echo json_encode([
         'status' => 'error',
@@ -70,10 +65,10 @@ if (!empty($errors)) {
     exit;
 }
 
-//HIER ANPASSEN: Ihre echte E-Mail-Adresse einsetzen
-$to = 'ihre-echte-email@ihre-domain.de'; // BEISPIEL: kontakt@meinefirma.de
 
-// E-Mail-Inhalt zusammenstellen
+$to = 'contact@dominique-dockal.de';
+
+
 $subject = 'Kontaktformular von ' . $data['name'];
 $message = "Name: " . $data['name'] . "\n";
 $message .= "E-Mail: " . $data['email'] . "\n";
@@ -82,12 +77,12 @@ $message .= "\n\n---\n";
 $message .= "Gesendet am: " . date('Y-m-d H:i:s') . "\n";
 $message .= "IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
 
-//HIER ANPASSEN: Ihre echte Domain einsetzen
-$headers = "From: noreply@ihre-domain.de\r\n"; // BEISPIEL: noreply@meinefirma.de
+
+$headers = "From: noreply@dominique-dockal.de\r\n";
 $headers .= "Reply-To: " . $data['email'] . "\r\n";
 $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 
-// E-Mail senden und Antwort an Angular zurücksenden
+
 if (mail($to, $subject, $message, $headers)) {
     echo json_encode([
         'status' => 'success',

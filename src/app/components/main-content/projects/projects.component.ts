@@ -24,9 +24,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
   } as const;
 
   private readonly CSS_CLASSES = {
-  OVERLAY_ACTIVE: 'active',
-  OVERLAY_OPEN: 'overlay-open'
-  } as const;
+    OVERLAY_ACTIVE: 'active',
+    OVERLAY_OPEN: 'overlay-open'
+    } as const;
 
   isOverlayVisible = false;
   projects: Project[] = [];

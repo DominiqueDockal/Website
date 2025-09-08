@@ -147,7 +147,7 @@ export class ContactComponent {
     return value === errorMessage;
   }
 
-/*   private submitForm(): void {
+  private submitForm(): void {
     this.isSubmitting = true;
     const formData = {
       name: this.contactForm.get('name')?.value,
@@ -174,7 +174,7 @@ export class ContactComponent {
         this.isSubmitting = false;
       }
     });
-  } */
+  }
 
   private showSuccessToast(): void {
     this.showSuccessMessage = true;
@@ -190,7 +190,8 @@ export class ContactComponent {
     }, 4000); 
   }
 
-  private submitForm(): void {
+
+/*   private submitForm(): void {
     this.isSubmitting = true;
     
     const formData = {
@@ -218,8 +219,9 @@ export class ContactComponent {
       }, 500); 
       
       return; 
-    }
+    } 
+  }*/
 }
 
-}
+
 
