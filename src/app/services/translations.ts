@@ -28,9 +28,9 @@ export const TRANSLATIONS: { [K in 'de' | 'en']: Record<string, string> } = {
     'skills.box-headline': 'Expertise',
     'skills.main-text': 'Mir ist das Verständnis der zugrunde liegenden Theorie genau so wichtig, wie ihre praktische Anwendung. \
                          Durch das systematische Erfassen der Grundpinzipien ist mir das Erlernen neuer Technologien durch Transfer sehr schnell möglich.',
-    'skills.another-skill': 'Suchen Sie nach einer',
+    'skills.another-skill': 'Suchst du nach einer',
     'skills.highlight': 'anderen Technologie?',
-    'skills.sub-text': 'Kontaktieren Sie mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.',
+    'skills.sub-text': 'Kontaktiere mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.',
     'skills.button': 'Kontakt',
 
     'hero.contact': 'Kontakt',
